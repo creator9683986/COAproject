@@ -1,0 +1,33 @@
+@startuml ER_Users
+
+entity Users {
+  *id : integer (PK)
+  username : varchar
+  login : varchar
+  password_hash : varchar
+  email : varchar
+  phone_number : varchar
+  type : varchar
+}
+
+entity UserProfile {
+  *id : integer
+  user_id : integer (FK)
+  first_name : varchar
+  last_name : varchar
+  bio : text
+  show_data: bool
+}
+
+entity BusinessProfiles {
+  *id : integer
+  user_id : integer (FK)
+  name : varchar
+  address : varchar
+  segment : varchar
+}
+
+Users ||--|| UserProfile
+Users ||--o| BusinessProfiles
+
+@enduml
