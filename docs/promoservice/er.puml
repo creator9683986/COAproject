@@ -1,0 +1,28 @@
+@startuml ER_Users
+
+entity Views {
+  *id : integer
+  promo_id : integer
+  user_id : integer
+  come : timestamp
+  go : timestamp
+}
+
+entity Sharing {
+  *id : integer
+  promo_id : integer
+  from : integer
+  to : integer
+  time : timestamp
+  text : text
+}
+
+entity Analisis {
+  *id : integer
+  promo_id : integer
+  likes : integer
+  comments : integer
+  users_count : varchar
+}
+
+@enduml
