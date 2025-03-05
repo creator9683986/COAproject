@@ -2,7 +2,7 @@
 #define AUTHSERVICEIMPL_H
 
 #include <string>
-#include "auth.grpc.pb.h"  // Убедитесь, что сгенерированные файлы находятся в include-пути компилятора
+#include "auth.grpc.pb.h"
 
 class AuthServiceImpl final : public auth::AuthService::Service {
 public:

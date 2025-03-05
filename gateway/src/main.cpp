@@ -10,10 +10,8 @@ using grpc::InsecureServerCredentials;
 
 namespace gateway {
 
-// Функция для запуска сервера API Gateway.
-// Можно расширить получение параметров (например, через аргументы командной строки или переменные окружения)
+
 void RunServer(const std::string& server_address, const std::string& authmanager_address) {
-    // Создаем канал для подключения к настоящему Auth Service.
     AuthServiceProxyImpl service(
         grpc::CreateChannel(authmanager_address, grpc::InsecureChannelCredentials())
     );
@@ -31,7 +29,6 @@ void RunServer(const std::string& server_address, const std::string& authmanager
 } // namespace gateway
 
 int main(int argc, char** argv) {
-    // Можно сделать парсинг аргументов для гибкой конфигурации.
     std::string server_address("0.0.0.0:50052");
     std::string authmanager_address("localhost:50051");
 

@@ -7,13 +7,10 @@
 
 namespace gateway {
 
-// Прокси-реализация сервиса аутентификации, перенаправляющая запросы к настоящему Auth Service.
 class AuthServiceProxyImpl final : public auth::AuthService::Service {
 public:
-    // Конструктор принимает канал, через который будет осуществляться связь с Auth Service.
     explicit AuthServiceProxyImpl(std::shared_ptr<grpc::Channel> channel);
 
-    // Переопределение методов gRPC-сервиса
     grpc::Status RegisterUser(grpc::ServerContext* context,
                                 const auth::RegisterUserRequest* request,
                                 auth::User* response) override;

@@ -5,7 +5,6 @@
 class AuthServiceTest : public ::testing::Test {
 protected:
     void SetUp() override {
-        // Подключаемся к серверу AuthService
         channel = grpc::CreateChannel("localhost:50051", grpc::InsecureChannelCredentials());
         stub = auth::AuthService::NewStub(channel);
     }
@@ -48,7 +47,6 @@ TEST_F(AuthServiceTest, LoginTest) {
 }
 
 TEST_F(AuthServiceTest, UpdateProfileTest) {
-    // Для обновления профиля используем token равный логину
     auth::UpdateProfileRequest request;
     request.set_token("testuser");
     request.set_first_name("Test");
@@ -79,7 +77,7 @@ TEST_F(AuthServiceTest, GetProfileTest) {
 
     EXPECT_TRUE(status.ok()) << "GetProfile failed: " << status.error_message();
     EXPECT_EQ(response.login(), "testuser");
-    EXPECT_EQ(response.email(), "newemail@example.com"); // обновлённый email
+    EXPECT_EQ(response.email(), "newemail@example.com");
     EXPECT_EQ(response.first_name(), "Test");
     EXPECT_EQ(response.last_name(), "User");
     EXPECT_EQ(response.birth_date(), "1990-01-01");

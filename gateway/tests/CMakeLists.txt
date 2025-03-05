@@ -7,10 +7,8 @@ find_package(gRPC REQUIRED)
 find_package(Protobuf REQUIRED)
 find_package(GTest REQUIRED)
 
-# Добавляем include-директорию с заголовками, находящимися в корневом каталоге проекта
 include_directories(${CMAKE_SOURCE_DIR}/../proto/generated)
 
-# Указываем путь к сгенерированным исходным файлам
 set(GENERATED_DIR ${CMAKE_SOURCE_DIR}/../proto/generated)
 
 set(TEST_SOURCES

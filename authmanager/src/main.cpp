@@ -19,7 +19,6 @@ void RunServer(const std::string& server_address, const std::string& db_conn_str
 
 int main(int argc, char** argv) {
     std::string server_address("0.0.0.0:50051");
-    // Строка подключения к БД (ее можно задать через переменные окружения или параметры командной строки)
     std::string db_conn_str("host=localhost user=postgres password=postgres dbname=authdb");
     RunServer(server_address, db_conn_str);
     return 0;

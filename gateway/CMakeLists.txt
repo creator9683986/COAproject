@@ -7,10 +7,8 @@ find_package(Protobuf REQUIRED)
 find_package(Threads REQUIRED)
 find_package(absl REQUIRED)
 find_package(gRPC CONFIG REQUIRED)
-# Указываем путь для поиска скомпилированных библиотек
 link_directories(/usr/local/lib)
 
-# Предполагаем, что сгенерированные файлы находятся в каталоге generated
 set(GENERATED_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../proto/generated")
 include_directories(${GENERATED_DIR})
 include_directories(${Protobuf_INCLUDE_DIRS})

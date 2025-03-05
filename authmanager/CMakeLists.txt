@@ -8,10 +8,8 @@ find_package(Threads REQUIRED)
 find_package(absl REQUIRED)
 find_package(gRPC CONFIG REQUIRED)
 
-# Папка с сгенерированными файлами proto
 set(GENERATED_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../proto/generated")
 
-# Папка с исходниками
 set(SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/src")
 
 include_directories(${SRC_DIR})

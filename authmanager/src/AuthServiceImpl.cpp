@@ -3,7 +3,6 @@
 #include <iostream>
 #include <pqxx/pqxx>
 
-// Конструктор: инициализация БД и создание таблицы пользователей, если она отсутствует
 AuthServiceImpl::AuthServiceImpl(const std::string& conn_str) : conn_str_(conn_str) {
     try {
         pqxx::connection C(conn_str_);
@@ -80,7 +79,6 @@ grpc::Status AuthServiceImpl::Login(grpc::ServerContext* context, const auth::Lo
         if(stored_password != request->password()){
             return grpc::Status(grpc::StatusCode::UNAUTHENTICATED, "Неверный пароль");
         }
-        // Для простоты токен – это просто логин (в реальном проекте следует использовать JWT или иной механизм)
         std::string token = request->login();
         response->set_token(token);
 
@@ -127,7 +125,6 @@ grpc::Status AuthServiceImpl::UpdateProfile(grpc::ServerContext* context, const 
         W.exec(update_query);
         W.commit();
 
-        // Получаем обновленные данные
         pqxx::connection C2(conn_str_);
         pqxx::work W2(C2);
         std::string select_query = "SELECT id, login, email, first_name, last_name, birth_date, phone, created_at, updated_at FROM users WHERE login = " + W2.quote(login);
