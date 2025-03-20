@@ -1,0 +1,3 @@
+/home/timsus/projects/COAproject/authmanager/build/CMakeFiles/authmanager.dir
+/home/timsus/projects/COAproject/authmanager/build/CMakeFiles/edit_cache.dir
+/home/timsus/projects/COAproject/authmanager/build/CMakeFiles/rebuild_cache.dir

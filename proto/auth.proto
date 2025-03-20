@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package auth;
+
+// Модель пользователя
+message User {
+    int64 id = 1;
+    string login = 2;
+    string email = 3;
+    string first_name = 4;
+    string last_name = 5;
+    string birth_date = 6; // Формат: YYYY-MM-DD
+    string phone = 7;
+    string created_at = 8;
+    string updated_at = 9;
+}
+
+// Запрос/ответ для регистрации
+message RegisterUserRequest {
+    string login = 1;
+    string password = 2;
+    string email = 3;
+}
+
+// Запрос/ответ для аутентификации
+message LoginRequest {
+    string login = 1;
+    string password = 2;
+}
+
+message LoginResponse {
+    string token = 1;
+    User user = 2;
+}
+
+// Запрос/ответ для обновления профиля
+message UpdateProfileRequest {
+    // Здесь для простоты используется token, равный логину
+    string token = 1;
+    string first_name = 2;
+    string last_name = 3;
+    string birth_date = 4;
+    string email = 5;
+    string phone = 6;
+}
+
+// Запрос/ответ для получения профиля
+message GetProfileRequest {
+    string token = 1;
+}
+
+// Определение сервиса аутентификации
+service AuthService {
+    rpc RegisterUser (RegisterUserRequest) returns (User);
+    rpc Login (LoginRequest) returns (LoginResponse);
+    rpc UpdateProfile (UpdateProfileRequest) returns (User);
+    rpc GetProfile (GetProfileRequest) returns (User);
+}
