@@ -45,6 +45,9 @@ struct TableStruct_auth_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_auth_2eproto;
 namespace auth {
+class DeleteUserRequest;
+struct DeleteUserRequestDefaultTypeInternal;
+extern DeleteUserRequestDefaultTypeInternal _DeleteUserRequest_default_instance_;
 class GetProfileRequest;
 struct GetProfileRequestDefaultTypeInternal;
 extern GetProfileRequestDefaultTypeInternal _GetProfileRequest_default_instance_;
@@ -65,6 +68,7 @@ struct UserDefaultTypeInternal;
 extern UserDefaultTypeInternal _User_default_instance_;
 }  // namespace auth
 PROTOBUF_NAMESPACE_OPEN
+template<> ::auth::DeleteUserRequest* Arena::CreateMaybeMessage<::auth::DeleteUserRequest>(Arena*);
 template<> ::auth::GetProfileRequest* Arena::CreateMaybeMessage<::auth::GetProfileRequest>(Arena*);
 template<> ::auth::LoginRequest* Arena::CreateMaybeMessage<::auth::LoginRequest>(Arena*);
 template<> ::auth::LoginResponse* Arena::CreateMaybeMessage<::auth::LoginResponse>(Arena*);
@@ -1223,6 +1227,154 @@ class GetProfileRequest final :
   public:
 
   // @@protoc_insertion_point(class_scope:auth.GetProfileRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr token_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_auth_2eproto;
+};
+// -------------------------------------------------------------------
+
+class DeleteUserRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:auth.DeleteUserRequest) */ {
+ public:
+  inline DeleteUserRequest() : DeleteUserRequest(nullptr) {}
+  ~DeleteUserRequest() override;
+  explicit PROTOBUF_CONSTEXPR DeleteUserRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  DeleteUserRequest(const DeleteUserRequest& from);
+  DeleteUserRequest(DeleteUserRequest&& from) noexcept
+    : DeleteUserRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline DeleteUserRequest& operator=(const DeleteUserRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DeleteUserRequest& operator=(DeleteUserRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const DeleteUserRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const DeleteUserRequest* internal_default_instance() {
+    return reinterpret_cast<const DeleteUserRequest*>(
+               &_DeleteUserRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  friend void swap(DeleteUserRequest& a, DeleteUserRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(DeleteUserRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(DeleteUserRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  DeleteUserRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<DeleteUserRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const DeleteUserRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const DeleteUserRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DeleteUserRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "auth.DeleteUserRequest";
+  }
+  protected:
+  explicit DeleteUserRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTokenFieldNumber = 1,
+  };
+  // string token = 1;
+  void clear_token();
+  const std::string& token() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_token(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_token();
+  PROTOBUF_NODISCARD std::string* release_token();
+  void set_allocated_token(std::string* token);
+  private:
+  const std::string& _internal_token() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_token(const std::string& value);
+  std::string* _internal_mutable_token();
+  public:
+
+  // @@protoc_insertion_point(class_scope:auth.DeleteUserRequest)
  private:
   class _Internal;
 
@@ -2424,9 +2576,65 @@ inline void GetProfileRequest::set_allocated_token(std::string* token) {
   // @@protoc_insertion_point(field_set_allocated:auth.GetProfileRequest.token)
 }
 
+// -------------------------------------------------------------------
+
+// DeleteUserRequest
+
+// string token = 1;
+inline void DeleteUserRequest::clear_token() {
+  token_.ClearToEmpty();
+}
+inline const std::string& DeleteUserRequest::token() const {
+  // @@protoc_insertion_point(field_get:auth.DeleteUserRequest.token)
+  return _internal_token();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void DeleteUserRequest::set_token(ArgT0&& arg0, ArgT... args) {
+ 
+ token_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:auth.DeleteUserRequest.token)
+}
+inline std::string* DeleteUserRequest::mutable_token() {
+  std::string* _s = _internal_mutable_token();
+  // @@protoc_insertion_point(field_mutable:auth.DeleteUserRequest.token)
+  return _s;
+}
+inline const std::string& DeleteUserRequest::_internal_token() const {
+  return token_.Get();
+}
+inline void DeleteUserRequest::_internal_set_token(const std::string& value) {
+  
+  token_.Set(value, GetArenaForAllocation());
+}
+inline std::string* DeleteUserRequest::_internal_mutable_token() {
+  
+  return token_.Mutable(GetArenaForAllocation());
+}
+inline std::string* DeleteUserRequest::release_token() {
+  // @@protoc_insertion_point(field_release:auth.DeleteUserRequest.token)
+  return token_.Release();
+}
+inline void DeleteUserRequest::set_allocated_token(std::string* token) {
+  if (token != nullptr) {
+    
+  } else {
+    
+  }
+  token_.SetAllocated(token, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (token_.IsDefault()) {
+    token_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:auth.DeleteUserRequest.token)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

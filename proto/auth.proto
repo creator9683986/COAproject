@@ -49,10 +49,16 @@ message GetProfileRequest {
     string token = 1;
 }
 
+// Запрос для удаления пользователя
+message DeleteUserRequest {
+    string token = 1;  // Токен, который используется для аутентификации (с которого можно получить логин)
+}
+
 // Определение сервиса аутентификации
 service AuthService {
     rpc RegisterUser (RegisterUserRequest) returns (User);
     rpc Login (LoginRequest) returns (LoginResponse);
     rpc UpdateProfile (UpdateProfileRequest) returns (User);
     rpc GetProfile (GetProfileRequest) returns (User);
+    rpc DeleteUser (DeleteUserRequest) returns (User);
 }

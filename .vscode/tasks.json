@@ -20,10 +20,20 @@
       "problemMatcher": []
     },
     {
+      "label": "Build Promo service",
+      "type": "shell",
+      "command": "mkdir -p build && cd build && cmake .. && make",
+      "options": {
+        "cwd": "${workspaceFolder}/promoservice"
+      },
+      "problemMatcher": []
+    },
+    {
       "label": "Build All",
       "dependsOn": [
         "Build Auth Service",
-        "Build API Gateway"
+        "Build API Gateway",
+        "Build Promo service"
       ],
       "problemMatcher": [],
       "group": {

@@ -29,4 +29,10 @@ grpc::Status AuthServiceProxyImpl::GetProfile(grpc::ServerContext* context,
     return stub_->GetProfile(&client_context, *request, response);
 }
 
+grpc::Status AuthServiceProxyImpl::DeleteUser(grpc::ServerContext* context,
+    const auth::DeleteUserRequest* request, auth::User* response) {
+    grpc::ClientContext client_context;
+    return stub_->DeleteUser(&client_context, *request, response);
+}
+
 } // namespace gateway

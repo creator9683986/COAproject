@@ -16,8 +16,11 @@ include_directories(${Protobuf_INCLUDE_DIRS})
 set(SOURCES
 ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/AuthServiceProxyImpl.cpp
-    ${GENERATED_DIR}/auth.pb.cc
+${CMAKE_CURRENT_SOURCE_DIR}/src/PromoServiceProxyImpl.cpp
+${GENERATED_DIR}/auth.pb.cc
     ${GENERATED_DIR}/auth.grpc.pb.cc
+    ${GENERATED_DIR}/promo.pb.cc
+    ${GENERATED_DIR}/promo.grpc.pb.cc
 )
 
 add_executable(gateway ${SOURCES})

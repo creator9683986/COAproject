@@ -64,6 +64,13 @@ class AuthService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::auth::User>> PrepareAsyncGetProfile(::grpc::ClientContext* context, const ::auth::GetProfileRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::auth::User>>(PrepareAsyncGetProfileRaw(context, request, cq));
     }
+    virtual ::grpc::Status DeleteUser(::grpc::ClientContext* context, const ::auth::DeleteUserRequest& request, ::auth::User* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::auth::User>> AsyncDeleteUser(::grpc::ClientContext* context, const ::auth::DeleteUserRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::auth::User>>(AsyncDeleteUserRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::auth::User>> PrepareAsyncDeleteUser(::grpc::ClientContext* context, const ::auth::DeleteUserRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::auth::User>>(PrepareAsyncDeleteUserRaw(context, request, cq));
+    }
     class async_interface {
      public:
       virtual ~async_interface() {}
@@ -75,6 +82,8 @@ class AuthService final {
       virtual void UpdateProfile(::grpc::ClientContext* context, const ::auth::UpdateProfileRequest* request, ::auth::User* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void GetProfile(::grpc::ClientContext* context, const ::auth::GetProfileRequest* request, ::auth::User* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetProfile(::grpc::ClientContext* context, const ::auth::GetProfileRequest* request, ::auth::User* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void DeleteUser(::grpc::ClientContext* context, const ::auth::DeleteUserRequest* request, ::auth::User* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void DeleteUser(::grpc::ClientContext* context, const ::auth::DeleteUserRequest* request, ::auth::User* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
@@ -88,6 +97,8 @@ class AuthService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::auth::User>* PrepareAsyncUpdateProfileRaw(::grpc::ClientContext* context, const ::auth::UpdateProfileRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::auth::User>* AsyncGetProfileRaw(::grpc::ClientContext* context, const ::auth::GetProfileRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::auth::User>* PrepareAsyncGetProfileRaw(::grpc::ClientContext* context, const ::auth::GetProfileRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::auth::User>* AsyncDeleteUserRaw(::grpc::ClientContext* context, const ::auth::DeleteUserRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::auth::User>* PrepareAsyncDeleteUserRaw(::grpc::ClientContext* context, const ::auth::DeleteUserRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -120,6 +131,13 @@ class AuthService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::auth::User>> PrepareAsyncGetProfile(::grpc::ClientContext* context, const ::auth::GetProfileRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::auth::User>>(PrepareAsyncGetProfileRaw(context, request, cq));
     }
+    ::grpc::Status DeleteUser(::grpc::ClientContext* context, const ::auth::DeleteUserRequest& request, ::auth::User* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::auth::User>> AsyncDeleteUser(::grpc::ClientContext* context, const ::auth::DeleteUserRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::auth::User>>(AsyncDeleteUserRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::auth::User>> PrepareAsyncDeleteUser(::grpc::ClientContext* context, const ::auth::DeleteUserRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::auth::User>>(PrepareAsyncDeleteUserRaw(context, request, cq));
+    }
     class async final :
       public StubInterface::async_interface {
      public:
@@ -131,6 +149,8 @@ class AuthService final {
       void UpdateProfile(::grpc::ClientContext* context, const ::auth::UpdateProfileRequest* request, ::auth::User* response, ::grpc::ClientUnaryReactor* reactor) override;
       void GetProfile(::grpc::ClientContext* context, const ::auth::GetProfileRequest* request, ::auth::User* response, std::function<void(::grpc::Status)>) override;
       void GetProfile(::grpc::ClientContext* context, const ::auth::GetProfileRequest* request, ::auth::User* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void DeleteUser(::grpc::ClientContext* context, const ::auth::DeleteUserRequest* request, ::auth::User* response, std::function<void(::grpc::Status)>) override;
+      void DeleteUser(::grpc::ClientContext* context, const ::auth::DeleteUserRequest* request, ::auth::User* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit async(Stub* stub): stub_(stub) { }
@@ -150,10 +170,13 @@ class AuthService final {
     ::grpc::ClientAsyncResponseReader< ::auth::User>* PrepareAsyncUpdateProfileRaw(::grpc::ClientContext* context, const ::auth::UpdateProfileRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::auth::User>* AsyncGetProfileRaw(::grpc::ClientContext* context, const ::auth::GetProfileRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::auth::User>* PrepareAsyncGetProfileRaw(::grpc::ClientContext* context, const ::auth::GetProfileRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::auth::User>* AsyncDeleteUserRaw(::grpc::ClientContext* context, const ::auth::DeleteUserRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::auth::User>* PrepareAsyncDeleteUserRaw(::grpc::ClientContext* context, const ::auth::DeleteUserRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_RegisterUser_;
     const ::grpc::internal::RpcMethod rpcmethod_Login_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateProfile_;
     const ::grpc::internal::RpcMethod rpcmethod_GetProfile_;
+    const ::grpc::internal::RpcMethod rpcmethod_DeleteUser_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -165,6 +188,7 @@ class AuthService final {
     virtual ::grpc::Status Login(::grpc::ServerContext* context, const ::auth::LoginRequest* request, ::auth::LoginResponse* response);
     virtual ::grpc::Status UpdateProfile(::grpc::ServerContext* context, const ::auth::UpdateProfileRequest* request, ::auth::User* response);
     virtual ::grpc::Status GetProfile(::grpc::ServerContext* context, const ::auth::GetProfileRequest* request, ::auth::User* response);
+    virtual ::grpc::Status DeleteUser(::grpc::ServerContext* context, const ::auth::DeleteUserRequest* request, ::auth::User* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_RegisterUser : public BaseClass {
@@ -246,7 +270,27 @@ class AuthService final {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_RegisterUser<WithAsyncMethod_Login<WithAsyncMethod_UpdateProfile<WithAsyncMethod_GetProfile<Service > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_DeleteUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_DeleteUser() {
+      ::grpc::Service::MarkMethodAsync(4);
+    }
+    ~WithAsyncMethod_DeleteUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteUser(::grpc::ServerContext* /*context*/, const ::auth::DeleteUserRequest* /*request*/, ::auth::User* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDeleteUser(::grpc::ServerContext* context, ::auth::DeleteUserRequest* request, ::grpc::ServerAsyncResponseWriter< ::auth::User>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_RegisterUser<WithAsyncMethod_Login<WithAsyncMethod_UpdateProfile<WithAsyncMethod_GetProfile<WithAsyncMethod_DeleteUser<Service > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_RegisterUser : public BaseClass {
    private:
@@ -355,7 +399,34 @@ class AuthService final {
     virtual ::grpc::ServerUnaryReactor* GetProfile(
       ::grpc::CallbackServerContext* /*context*/, const ::auth::GetProfileRequest* /*request*/, ::auth::User* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_RegisterUser<WithCallbackMethod_Login<WithCallbackMethod_UpdateProfile<WithCallbackMethod_GetProfile<Service > > > > CallbackService;
+  template <class BaseClass>
+  class WithCallbackMethod_DeleteUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_DeleteUser() {
+      ::grpc::Service::MarkMethodCallback(4,
+          new ::grpc::internal::CallbackUnaryHandler< ::auth::DeleteUserRequest, ::auth::User>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::auth::DeleteUserRequest* request, ::auth::User* response) { return this->DeleteUser(context, request, response); }));}
+    void SetMessageAllocatorFor_DeleteUser(
+        ::grpc::MessageAllocator< ::auth::DeleteUserRequest, ::auth::User>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::auth::DeleteUserRequest, ::auth::User>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_DeleteUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteUser(::grpc::ServerContext* /*context*/, const ::auth::DeleteUserRequest* /*request*/, ::auth::User* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* DeleteUser(
+      ::grpc::CallbackServerContext* /*context*/, const ::auth::DeleteUserRequest* /*request*/, ::auth::User* /*response*/)  { return nullptr; }
+  };
+  typedef WithCallbackMethod_RegisterUser<WithCallbackMethod_Login<WithCallbackMethod_UpdateProfile<WithCallbackMethod_GetProfile<WithCallbackMethod_DeleteUser<Service > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_RegisterUser : public BaseClass {
@@ -421,6 +492,23 @@ class AuthService final {
     }
     // disable synchronous version of this method
     ::grpc::Status GetProfile(::grpc::ServerContext* /*context*/, const ::auth::GetProfileRequest* /*request*/, ::auth::User* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_DeleteUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_DeleteUser() {
+      ::grpc::Service::MarkMethodGeneric(4);
+    }
+    ~WithGenericMethod_DeleteUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteUser(::grpc::ServerContext* /*context*/, const ::auth::DeleteUserRequest* /*request*/, ::auth::User* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -503,6 +591,26 @@ class AuthService final {
     }
     void RequestGetProfile(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_DeleteUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_DeleteUser() {
+      ::grpc::Service::MarkMethodRaw(4);
+    }
+    ~WithRawMethod_DeleteUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteUser(::grpc::ServerContext* /*context*/, const ::auth::DeleteUserRequest* /*request*/, ::auth::User* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDeleteUser(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -591,6 +699,28 @@ class AuthService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* GetProfile(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_DeleteUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_DeleteUser() {
+      ::grpc::Service::MarkMethodRawCallback(4,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->DeleteUser(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_DeleteUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteUser(::grpc::ServerContext* /*context*/, const ::auth::DeleteUserRequest* /*request*/, ::auth::User* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* DeleteUser(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
@@ -701,9 +831,36 @@ class AuthService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedGetProfile(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::auth::GetProfileRequest,::auth::User>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_RegisterUser<WithStreamedUnaryMethod_Login<WithStreamedUnaryMethod_UpdateProfile<WithStreamedUnaryMethod_GetProfile<Service > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_DeleteUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_DeleteUser() {
+      ::grpc::Service::MarkMethodStreamed(4,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::auth::DeleteUserRequest, ::auth::User>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::auth::DeleteUserRequest, ::auth::User>* streamer) {
+                       return this->StreamedDeleteUser(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_DeleteUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status DeleteUser(::grpc::ServerContext* /*context*/, const ::auth::DeleteUserRequest* /*request*/, ::auth::User* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedDeleteUser(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::auth::DeleteUserRequest,::auth::User>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_RegisterUser<WithStreamedUnaryMethod_Login<WithStreamedUnaryMethod_UpdateProfile<WithStreamedUnaryMethod_GetProfile<WithStreamedUnaryMethod_DeleteUser<Service > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_RegisterUser<WithStreamedUnaryMethod_Login<WithStreamedUnaryMethod_UpdateProfile<WithStreamedUnaryMethod_GetProfile<Service > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_RegisterUser<WithStreamedUnaryMethod_Login<WithStreamedUnaryMethod_UpdateProfile<WithStreamedUnaryMethod_GetProfile<WithStreamedUnaryMethod_DeleteUser<Service > > > > > StreamedService;
 };
 
 }  // namespace auth

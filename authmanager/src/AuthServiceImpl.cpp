@@ -2,6 +2,31 @@
 #include "utils.h"
 #include <iostream>
 #include <pqxx/pqxx>
+#include <chrono>
+#include <sstream>
+#include <unordered_map>
+#include <mutex>
+
+static std::unordered_map<std::string, std::string> token_map;
+static std::mutex token_map_mutex;
+
+std::string generateToken(const std::string &login) {
+    auto now = std::chrono::system_clock::now().time_since_epoch().count();
+    std::stringstream ss;
+    ss << login << now;
+    std::hash<std::string> hasher;
+    size_t token_hash = hasher(ss.str());
+    return std::to_string(token_hash);
+}
+
+std::string verifyToken(const std::string &token) {
+    std::lock_guard<std::mutex> lock(token_map_mutex);
+    auto it = token_map.find(token);
+    if(it != token_map.end()){
+        return it->second;
+    }
+    return "";
+}
 
 AuthServiceImpl::AuthServiceImpl(const std::string& conn_str) : conn_str_(conn_str) {
     try {
@@ -31,7 +56,6 @@ grpc::Status AuthServiceImpl::RegisterUser(grpc::ServerContext* context, const a
         pqxx::connection C(conn_str_);
         pqxx::work W(C);
 
-        // Проверка наличия пользователя с таким логином
         std::string check_query = "SELECT COUNT(*) FROM users WHERE login = " + W.quote(request->login());
         pqxx::result R = W.exec(check_query);
         int count = R[0][0].as<int>();
@@ -40,7 +64,6 @@ grpc::Status AuthServiceImpl::RegisterUser(grpc::ServerContext* context, const a
         }
         std::string timestamp = current_timestamp();
 
-        // Вставка нового пользователя и получение сгенерированного id
         std::string insert_query = "INSERT INTO users (login, password, email, created_at, updated_at) VALUES ("
             + W.quote(request->login()) + ", "
             + W.quote(request->password()) + ", "
@@ -52,7 +75,6 @@ grpc::Status AuthServiceImpl::RegisterUser(grpc::ServerContext* context, const a
 
         int user_id = R2[0][0].as<int>();
 
-        // Формирование ответа
         response->set_id(user_id);
         response->set_login(request->login());
         response->set_email(request->email());
@@ -79,7 +101,11 @@ grpc::Status AuthServiceImpl::Login(grpc::ServerContext* context, const auth::Lo
         if(stored_password != request->password()){
             return grpc::Status(grpc::StatusCode::UNAUTHENTICATED, "Неверный пароль");
         }
-        std::string token = request->login();
+        std::string token = generateToken(request->login());
+        {
+            std::lock_guard<std::mutex> lock(token_map_mutex);
+            token_map[token] = request->login();
+        }
         response->set_token(token);
 
         auth::User* user = response->mutable_user();
@@ -101,11 +127,14 @@ grpc::Status AuthServiceImpl::Login(grpc::ServerContext* context, const auth::Lo
 
 grpc::Status AuthServiceImpl::UpdateProfile(grpc::ServerContext* context, const auth::UpdateProfileRequest* request,
                                               auth::User* response) {
-    std::string login = request->token();
+    std::string token = request->token();
+    std::string login = verifyToken(token);
+    if(login.empty()){
+        return grpc::Status(grpc::StatusCode::UNAUTHENTICATED, "Недействительный токен");
+    }
     try {
         pqxx::connection C(conn_str_);
         pqxx::work W(C);
-        // Проверяем наличие пользователя
         std::string query = "SELECT id FROM users WHERE login = " + W.quote(login);
         pqxx::result R = W.exec(query);
         if(R.empty()){
@@ -113,7 +142,6 @@ grpc::Status AuthServiceImpl::UpdateProfile(grpc::ServerContext* context, const 
         }
         std::string timestamp = current_timestamp();
 
-        // Обновляем поля профиля (логин и пароль менять нельзя)
         std::string update_query = "UPDATE users SET "
             "first_name = " + W.quote(request->first_name()) + ", "
             "last_name = " + W.quote(request->last_name()) + ", "
@@ -150,7 +178,11 @@ grpc::Status AuthServiceImpl::UpdateProfile(grpc::ServerContext* context, const 
 
 grpc::Status AuthServiceImpl::GetProfile(grpc::ServerContext* context, const auth::GetProfileRequest* request,
                                            auth::User* response) {
-    std::string login = request->token();
+    std::string token = request->token();
+    std::string login = verifyToken(token);
+    if(login.empty()){
+        return grpc::Status(grpc::StatusCode::UNAUTHENTICATED, "Недействительный токен");
+    }
     try {
         pqxx::connection C(conn_str_);
         pqxx::work W(C);
@@ -171,6 +203,48 @@ grpc::Status AuthServiceImpl::GetProfile(grpc::ServerContext* context, const aut
     } catch (const std::exception &e) {
         std::cerr << "GetProfile error: " << e.what() << std::endl;
         return grpc::Status(grpc::StatusCode::INTERNAL, "Ошибка при получении профиля");
+    }
+    return grpc::Status::OK;
+}
+
+grpc::Status AuthServiceImpl::DeleteUser(grpc::ServerContext* context, const auth::DeleteUserRequest* request,
+                                           auth::User* response) {
+    std::string token = request->token();
+    std::string login = verifyToken(token);
+    if(login.empty()){
+        return grpc::Status(grpc::StatusCode::UNAUTHENTICATED, "Недействительный токен");
+    }
+    try {
+        pqxx::connection C(conn_str_);
+        pqxx::work W(C);
+        
+        std::string select_query = "SELECT id, login, email, first_name, last_name, birth_date, phone, created_at, updated_at FROM users WHERE login = " + W.quote(login);
+        pqxx::result R = W.exec(select_query);
+        if(R.empty()){
+            return grpc::Status(grpc::StatusCode::NOT_FOUND, "Пользователь не найден");
+        }
+        
+        std::string delete_query = "DELETE FROM users WHERE login = " + W.quote(login);
+        W.exec(delete_query);
+        W.commit();
+        
+        {
+            std::lock_guard<std::mutex> lock(token_map_mutex);
+            token_map.erase(token);
+        }
+        
+        response->set_id(R[0]["id"].as<int>());
+        response->set_login(R[0]["login"].as<std::string>());
+        response->set_email(R[0]["email"].as<std::string>());
+        if(!R[0]["first_name"].is_null()) response->set_first_name(R[0]["first_name"].as<std::string>());
+        if(!R[0]["last_name"].is_null()) response->set_last_name(R[0]["last_name"].as<std::string>());
+        if(!R[0]["birth_date"].is_null()) response->set_birth_date(R[0]["birth_date"].as<std::string>());
+        if(!R[0]["phone"].is_null()) response->set_phone(R[0]["phone"].as<std::string>());
+        response->set_created_at(R[0]["created_at"].as<std::string>());
+        response->set_updated_at(R[0]["updated_at"].as<std::string>());
+    } catch (const std::exception &e) {
+        std::cerr << "DeleteUser error: " << e.what() << std::endl;
+        return grpc::Status(grpc::StatusCode::INTERNAL, "Ошибка при удалении пользователя");
     }
     return grpc::Status::OK;
 }

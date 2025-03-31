@@ -23,6 +23,9 @@ public:
     grpc::Status GetProfile(grpc::ServerContext* context,
                             const auth::GetProfileRequest* request,
                             auth::User* response) override;
+    grpc::Status DeleteUser(grpc::ServerContext* context,
+                            const auth::DeleteUserRequest* request,
+                            auth::User* response) override;
 private:
     std::unique_ptr<auth::AuthService::Stub> stub_;
 };

@@ -267,7 +267,7 @@ ZLIB_LIBRARY_DEBUG:FILEPATH=ZLIB_LIBRARY_DEBUG-NOTFOUND
 ZLIB_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libz.so
 
 //The directory containing a CMake configuration file for absl.
-absl_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/absl
+absl_DIR:PATH=/usr/local/lib/cmake/absl
 
 //The directory containing a CMake configuration file for c-ares.
 c-ares_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/c-ares

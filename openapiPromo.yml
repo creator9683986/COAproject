@@ -1,0 +1,250 @@
+openapi: 3.0.0
+info:
+  title: Promo Service API
+  version: "1.0"
+servers:
+  - url: http://localhost:8080
+paths:
+  /promo:
+    post:
+      summary: Создание промокода
+      operationId: createPromoCode
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePromoCodeRequest'
+      responses:
+        '200':
+          description: Промокод успешно создан
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PromoCode'
+    get:
+      summary: Получение списка промокодов (с пагинацией)
+      operationId: listPromoCodes
+      parameters:
+        - in: query
+          name: token
+          required: true
+          schema:
+            type: string
+          description: Токен аутентификации
+        - in: query
+          name: page
+          required: false
+          schema:
+            type: integer
+            default: 1
+          description: Номер страницы
+        - in: query
+          name: page_size
+          required: false
+          schema:
+            type: integer
+            default: 10
+          description: Количество записей на страницу
+      responses:
+        '200':
+          description: Список промокодов
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListPromoCodesResponse'
+  /promo/{promo_id}:
+    get:
+      summary: Получение промокода по ID
+      operationId: getPromoCodeById
+      parameters:
+        - in: path
+          name: promo_id
+          required: true
+          schema:
+            type: integer
+          description: Идентификатор промокода
+        - in: query
+          name: token
+          required: true
+          schema:
+            type: string
+          description: Токен аутентификации
+      responses:
+        '200':
+          description: Данные промокода
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PromoCode'
+    put:
+      summary: Обновление промокода
+      operationId: updatePromoCode
+      parameters:
+        - in: path
+          name: promo_id
+          required: true
+          schema:
+            type: integer
+          description: Идентификатор промокода для обновления
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdatePromoCodeRequest'
+      responses:
+        '200':
+          description: Обновлённые данные промокода
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PromoCode'
+    delete:
+      summary: Удаление промокода
+      operationId: deletePromoCode
+      parameters:
+        - in: path
+          name: promo_id
+          required: true
+          schema:
+            type: integer
+          description: Идентификатор промокода для удаления
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeletePromoCodeRequest'
+      responses:
+        '200':
+          description: Данные удалённого промокода
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PromoCode'
+components:
+  schemas:
+    PromoCode:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        description:
+          type: string
+        creator_id:
+          type: integer
+        discount:
+          type: number
+          format: double
+        code:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+      required:
+        - id
+        - title
+        - description
+        - creator_id
+        - discount
+        - code
+        - created_at
+        - updated_at
+    CreatePromoCodeRequest:
+      type: object
+      properties:
+        token:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        discount:
+          type: number
+          format: double
+        code:
+          type: string
+      required:
+        - token
+        - title
+        - description
+        - discount
+        - code
+    UpdatePromoCodeRequest:
+      type: object
+      properties:
+        token:
+          type: string
+        promo_id:
+          type: integer
+        title:
+          type: string
+        description:
+          type: string
+        discount:
+          type: number
+          format: double
+        code:
+          type: string
+      required:
+        - token
+        - promo_id
+        - title
+        - description
+        - discount
+        - code
+    DeletePromoCodeRequest:
+      type: object
+      properties:
+        token:
+          type: string
+        promo_id:
+          type: integer
+      required:
+        - token
+        - promo_id
+    GetPromoCodeRequest:
+      type: object
+      properties:
+        token:
+          type: string
+        promo_id:
+          type: integer
+      required:
+        - token
+        - promo_id
+    ListPromoCodesRequest:
+      type: object
+      properties:
+        token:
+          type: string
+        page:
+          type: integer
+        page_size:
+          type: integer
+      required:
+        - token
+    ListPromoCodesResponse:
+      type: object
+      properties:
+        promo_codes:
+          type: array
+          items:
+            $ref: '#/components/schemas/PromoCode'
+        total_count:
+          type: integer
+        page:
+          type: integer
+        page_size:
+          type: integer
+      required:
+        - promo_codes
+        - total_count
+        - page
+        - page_size

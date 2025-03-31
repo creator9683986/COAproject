@@ -110,8 +110,20 @@ struct GetProfileRequestDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetProfileRequestDefaultTypeInternal _GetProfileRequest_default_instance_;
+PROTOBUF_CONSTEXPR DeleteUserRequest::DeleteUserRequest(
+    ::_pbi::ConstantInitialized)
+  : token_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}){}
+struct DeleteUserRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR DeleteUserRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~DeleteUserRequestDefaultTypeInternal() {}
+  union {
+    DeleteUserRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DeleteUserRequestDefaultTypeInternal _DeleteUserRequest_default_instance_;
 }  // namespace auth
-static ::_pb::Metadata file_level_metadata_auth_2eproto[6];
+static ::_pb::Metadata file_level_metadata_auth_2eproto[7];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_auth_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_auth_2eproto = nullptr;
 
@@ -175,6 +187,13 @@ const uint32_t TableStruct_auth_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(pro
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::auth::GetProfileRequest, token_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::auth::DeleteUserRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::auth::DeleteUserRequest, token_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::auth::User)},
@@ -183,6 +202,7 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 32, -1, -1, sizeof(::auth::LoginResponse)},
   { 40, -1, -1, sizeof(::auth::UpdateProfileRequest)},
   { 52, -1, -1, sizeof(::auth::GetProfileRequest)},
+  { 59, -1, -1, sizeof(::auth::DeleteUserRequest)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -192,6 +212,7 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::auth::_LoginResponse_default_instance_._instance,
   &::auth::_UpdateProfileRequest_default_instance_._instance,
   &::auth::_GetProfileRequest_default_instance_._instance,
+  &::auth::_DeleteUserRequest_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_auth_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -208,19 +229,21 @@ const char descriptor_table_protodef_auth_2eproto[] PROTOBUF_SECTION_VARIABLE(pr
   "\022\022\n\nfirst_name\030\002 \001(\t\022\021\n\tlast_name\030\003 \001(\t\022"
   "\022\n\nbirth_date\030\004 \001(\t\022\r\n\005email\030\005 \001(\t\022\r\n\005ph"
   "one\030\006 \001(\t\"\"\n\021GetProfileRequest\022\r\n\005token\030"
-  "\001 \001(\t2\342\001\n\013AuthService\0225\n\014RegisterUser\022\031."
-  "auth.RegisterUserRequest\032\n.auth.User\0220\n\005"
-  "Login\022\022.auth.LoginRequest\032\023.auth.LoginRe"
-  "sponse\0227\n\rUpdateProfile\022\032.auth.UpdatePro"
-  "fileRequest\032\n.auth.User\0221\n\nGetProfile\022\027."
-  "auth.GetProfileRequest\032\n.auth.Userb\006prot"
-  "o3"
+  "\001 \001(\t\"\"\n\021DeleteUserRequest\022\r\n\005token\030\001 \001("
+  "\t2\225\002\n\013AuthService\0225\n\014RegisterUser\022\031.auth"
+  ".RegisterUserRequest\032\n.auth.User\0220\n\005Logi"
+  "n\022\022.auth.LoginRequest\032\023.auth.LoginRespon"
+  "se\0227\n\rUpdateProfile\022\032.auth.UpdateProfile"
+  "Request\032\n.auth.User\0221\n\nGetProfile\022\027.auth"
+  ".GetProfileRequest\032\n.auth.User\0221\n\nDelete"
+  "User\022\027.auth.DeleteUserRequest\032\n.auth.Use"
+  "rb\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_auth_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_auth_2eproto = {
-    false, false, 762, descriptor_table_protodef_auth_2eproto,
+    false, false, 849, descriptor_table_protodef_auth_2eproto,
     "auth.proto",
-    &descriptor_table_auth_2eproto_once, nullptr, 0, 6,
+    &descriptor_table_auth_2eproto_once, nullptr, 0, 7,
     schemas, file_default_instances, TableStruct_auth_2eproto::offsets,
     file_level_metadata_auth_2eproto, file_level_enum_descriptors_auth_2eproto,
     file_level_service_descriptors_auth_2eproto,
@@ -2191,6 +2214,201 @@ void GetProfileRequest::InternalSwap(GetProfileRequest* other) {
       file_level_metadata_auth_2eproto[5]);
 }
 
+// ===================================================================
+
+class DeleteUserRequest::_Internal {
+ public:
+};
+
+DeleteUserRequest::DeleteUserRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:auth.DeleteUserRequest)
+}
+DeleteUserRequest::DeleteUserRequest(const DeleteUserRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  token_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    token_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_token().empty()) {
+    token_.Set(from._internal_token(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:auth.DeleteUserRequest)
+}
+
+inline void DeleteUserRequest::SharedCtor() {
+token_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  token_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+DeleteUserRequest::~DeleteUserRequest() {
+  // @@protoc_insertion_point(destructor:auth.DeleteUserRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void DeleteUserRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  token_.Destroy();
+}
+
+void DeleteUserRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void DeleteUserRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:auth.DeleteUserRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  token_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* DeleteUserRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string token = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_token();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "auth.DeleteUserRequest.token"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* DeleteUserRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:auth.DeleteUserRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string token = 1;
+  if (!this->_internal_token().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_token().data(), static_cast<int>(this->_internal_token().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "auth.DeleteUserRequest.token");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_token(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:auth.DeleteUserRequest)
+  return target;
+}
+
+size_t DeleteUserRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:auth.DeleteUserRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string token = 1;
+  if (!this->_internal_token().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_token());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData DeleteUserRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    DeleteUserRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DeleteUserRequest::GetClassData() const { return &_class_data_; }
+
+void DeleteUserRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<DeleteUserRequest *>(to)->MergeFrom(
+      static_cast<const DeleteUserRequest &>(from));
+}
+
+
+void DeleteUserRequest::MergeFrom(const DeleteUserRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:auth.DeleteUserRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_token().empty()) {
+    _internal_set_token(from._internal_token());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void DeleteUserRequest::CopyFrom(const DeleteUserRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:auth.DeleteUserRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DeleteUserRequest::IsInitialized() const {
+  return true;
+}
+
+void DeleteUserRequest::InternalSwap(DeleteUserRequest* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &token_, lhs_arena,
+      &other->token_, rhs_arena
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata DeleteUserRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_auth_2eproto_getter, &descriptor_table_auth_2eproto_once,
+      file_level_metadata_auth_2eproto[6]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace auth
 PROTOBUF_NAMESPACE_OPEN
@@ -2217,6 +2435,10 @@ Arena::CreateMaybeMessage< ::auth::UpdateProfileRequest >(Arena* arena) {
 template<> PROTOBUF_NOINLINE ::auth::GetProfileRequest*
 Arena::CreateMaybeMessage< ::auth::GetProfileRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::auth::GetProfileRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::auth::DeleteUserRequest*
+Arena::CreateMaybeMessage< ::auth::DeleteUserRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::auth::DeleteUserRequest >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

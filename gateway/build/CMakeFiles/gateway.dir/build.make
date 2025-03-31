@@ -97,10 +97,24 @@ CMakeFiles/gateway.dir/src/AuthServiceProxyImpl.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gateway.dir/src/AuthServiceProxyImpl.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/timsus/projects/COAproject/gateway/src/AuthServiceProxyImpl.cpp -o CMakeFiles/gateway.dir/src/AuthServiceProxyImpl.cpp.s
 
+CMakeFiles/gateway.dir/src/PromoServiceProxyImpl.cpp.o: CMakeFiles/gateway.dir/flags.make
+CMakeFiles/gateway.dir/src/PromoServiceProxyImpl.cpp.o: /home/timsus/projects/COAproject/gateway/src/PromoServiceProxyImpl.cpp
+CMakeFiles/gateway.dir/src/PromoServiceProxyImpl.cpp.o: CMakeFiles/gateway.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timsus/projects/COAproject/gateway/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/gateway.dir/src/PromoServiceProxyImpl.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gateway.dir/src/PromoServiceProxyImpl.cpp.o -MF CMakeFiles/gateway.dir/src/PromoServiceProxyImpl.cpp.o.d -o CMakeFiles/gateway.dir/src/PromoServiceProxyImpl.cpp.o -c /home/timsus/projects/COAproject/gateway/src/PromoServiceProxyImpl.cpp
+
+CMakeFiles/gateway.dir/src/PromoServiceProxyImpl.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gateway.dir/src/PromoServiceProxyImpl.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/timsus/projects/COAproject/gateway/src/PromoServiceProxyImpl.cpp > CMakeFiles/gateway.dir/src/PromoServiceProxyImpl.cpp.i
+
+CMakeFiles/gateway.dir/src/PromoServiceProxyImpl.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gateway.dir/src/PromoServiceProxyImpl.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/timsus/projects/COAproject/gateway/src/PromoServiceProxyImpl.cpp -o CMakeFiles/gateway.dir/src/PromoServiceProxyImpl.cpp.s
+
 CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.pb.cc.o: CMakeFiles/gateway.dir/flags.make
 CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.pb.cc.o: /home/timsus/projects/COAproject/proto/generated/auth.pb.cc
 CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.pb.cc.o: CMakeFiles/gateway.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timsus/projects/COAproject/gateway/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.pb.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timsus/projects/COAproject/gateway/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.pb.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.pb.cc.o -MF CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.pb.cc.o.d -o CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.pb.cc.o -c /home/timsus/projects/COAproject/proto/generated/auth.pb.cc
 
 CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.pb.cc.i: cmake_force
@@ -114,7 +128,7 @@ CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.pb.c
 CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc.o: CMakeFiles/gateway.dir/flags.make
 CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc.o: /home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc
 CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc.o: CMakeFiles/gateway.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timsus/projects/COAproject/gateway/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timsus/projects/COAproject/gateway/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc.o -MF CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc.o.d -o CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc.o -c /home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc
 
 CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc.i: cmake_force
@@ -125,78 +139,122 @@ CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.grpc
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc -o CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc.s
 
+CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o: CMakeFiles/gateway.dir/flags.make
+CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o: /home/timsus/projects/COAproject/proto/generated/promo.pb.cc
+CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o: CMakeFiles/gateway.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timsus/projects/COAproject/gateway/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o -MF CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o.d -o CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o -c /home/timsus/projects/COAproject/proto/generated/promo.pb.cc
+
+CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/timsus/projects/COAproject/proto/generated/promo.pb.cc > CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.i
+
+CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/timsus/projects/COAproject/proto/generated/promo.pb.cc -o CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.s
+
+CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.o: CMakeFiles/gateway.dir/flags.make
+CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.o: /home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc
+CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.o: CMakeFiles/gateway.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timsus/projects/COAproject/gateway/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.o -MF CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.o.d -o CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.o -c /home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc
+
+CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc > CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.i
+
+CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc -o CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.s
+
 # Object files for target gateway
 gateway_OBJECTS = \
 "CMakeFiles/gateway.dir/src/main.cpp.o" \
 "CMakeFiles/gateway.dir/src/AuthServiceProxyImpl.cpp.o" \
+"CMakeFiles/gateway.dir/src/PromoServiceProxyImpl.cpp.o" \
 "CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.pb.cc.o" \
-"CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc.o"
+"CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc.o" \
+"CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o" \
+"CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.o"
 
 # External object files for target gateway
 gateway_EXTERNAL_OBJECTS =
 
 gateway: CMakeFiles/gateway.dir/src/main.cpp.o
 gateway: CMakeFiles/gateway.dir/src/AuthServiceProxyImpl.cpp.o
+gateway: CMakeFiles/gateway.dir/src/PromoServiceProxyImpl.cpp.o
 gateway: CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.pb.cc.o
 gateway: CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc.o
+gateway: CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o
+gateway: CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.o
 gateway: CMakeFiles/gateway.dir/build.make
 gateway: /usr/lib/x86_64-linux-gnu/libgrpc++.so.1.51.1
 gateway: /usr/local/lib/libprotobuf.so
+gateway: /usr/local/lib/libabsl_synchronization.a
 gateway: /usr/lib/x86_64-linux-gnu/libgrpc.so.29.0.0
 gateway: /usr/lib/x86_64-linux-gnu/libz.so
 gateway: /usr/lib/x86_64-linux-gnu/libcares.so.2.12.0
 gateway: /usr/lib/x86_64-linux-gnu/libaddress_sorting.so.29.0.0
 gateway: /usr/lib/x86_64-linux-gnu/libupb.so.29.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_raw_hash_set.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_hashtablez_sampler.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_hash.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_city.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_low_level_hash.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_statusor.so.20220623.0.0
+gateway: /usr/local/lib/libabsl_raw_hash_set.a
+gateway: /usr/local/lib/libabsl_hashtablez_sampler.a
+gateway: /usr/local/lib/libabsl_hash.a
+gateway: /usr/local/lib/libabsl_city.a
+gateway: /usr/local/lib/libabsl_low_level_hash.a
+gateway: /usr/local/lib/libabsl_statusor.a
 gateway: /usr/lib/x86_64-linux-gnu/libgpr.so.29.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_bad_variant_access.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_status.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_strerror.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_random_distributions.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_random_seed_sequences.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_random_internal_pool_urbg.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen_hwaes.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen_hwaes_impl.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_random_internal_randen_slow.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_random_internal_platform.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_random_internal_seed_material.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_random_seed_gen_exception.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_cord.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_bad_optional_access.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_cordz_info.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_cord_internal.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_cordz_functions.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_exponential_biased.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_cordz_handle.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_synchronization.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_graphcycles_internal.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_stacktrace.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_symbolize.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_malloc_internal.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_debugging_internal.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_demangle_internal.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_time.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_civil_time.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_time_zone.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_str_format_internal.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_strings.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_throw_delegate.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_strings_internal.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_base.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_raw_logging_internal.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_log_severity.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_spinlock_wait.so.20220623.0.0
-gateway: /usr/lib/x86_64-linux-gnu/libabsl_int128.so.20220623.0.0
+gateway: /usr/local/lib/libabsl_status.a
+gateway: /usr/local/lib/libabsl_leak_check.a
+gateway: /usr/local/lib/libabsl_strerror.a
+gateway: /usr/local/lib/libabsl_random_distributions.a
+gateway: /usr/local/lib/libabsl_random_seed_sequences.a
+gateway: /usr/local/lib/libabsl_random_internal_entropy_pool.a
+gateway: /usr/local/lib/libabsl_random_internal_randen.a
+gateway: /usr/local/lib/libabsl_random_internal_randen_hwaes.a
+gateway: /usr/local/lib/libabsl_random_internal_randen_hwaes_impl.a
+gateway: /usr/local/lib/libabsl_random_internal_randen_slow.a
+gateway: /usr/local/lib/libabsl_random_internal_platform.a
+gateway: /usr/local/lib/libabsl_random_internal_seed_material.a
+gateway: /usr/local/lib/libabsl_random_seed_gen_exception.a
+gateway: /usr/local/lib/libabsl_cord.a
+gateway: /usr/local/lib/libabsl_cordz_info.a
+gateway: /usr/local/lib/libabsl_cord_internal.a
+gateway: /usr/local/lib/libabsl_cordz_functions.a
+gateway: /usr/local/lib/libabsl_exponential_biased.a
+gateway: /usr/local/lib/libabsl_cordz_handle.a
+gateway: /usr/local/lib/libabsl_synchronization.a
+gateway: /usr/local/lib/libabsl_graphcycles_internal.a
+gateway: /usr/local/lib/libabsl_kernel_timeout_internal.a
+gateway: /usr/local/lib/libabsl_stacktrace.a
+gateway: /usr/local/lib/libabsl_symbolize.a
+gateway: /usr/local/lib/libabsl_malloc_internal.a
+gateway: /usr/local/lib/libabsl_debugging_internal.a
+gateway: /usr/local/lib/libabsl_demangle_internal.a
+gateway: /usr/local/lib/libabsl_demangle_rust.a
+gateway: /usr/local/lib/libabsl_decode_rust_punycode.a
+gateway: /usr/local/lib/libabsl_utf8_for_code_point.a
+gateway: /usr/local/lib/libabsl_tracing_internal.a
+gateway: /usr/local/lib/libabsl_time.a
+gateway: /usr/local/lib/libabsl_civil_time.a
+gateway: /usr/local/lib/libabsl_time_zone.a
+gateway: /usr/local/lib/libabsl_crc_cord_state.a
+gateway: /usr/local/lib/libabsl_crc32c.a
+gateway: /usr/local/lib/libabsl_str_format_internal.a
+gateway: /usr/local/lib/libabsl_strings.a
+gateway: /usr/local/lib/libabsl_strings_internal.a
+gateway: /usr/local/lib/libabsl_string_view.a
+gateway: /usr/local/lib/libabsl_int128.a
+gateway: /usr/local/lib/libabsl_throw_delegate.a
+gateway: /usr/local/lib/libabsl_crc_internal.a
+gateway: /usr/local/lib/libabsl_crc_cpu_detect.a
+gateway: /usr/local/lib/libabsl_base.a
+gateway: /usr/local/lib/libabsl_raw_logging_internal.a
+gateway: /usr/local/lib/libabsl_log_severity.a
+gateway: /usr/local/lib/libabsl_spinlock_wait.a
 gateway: /usr/lib/x86_64-linux-gnu/libssl.so
 gateway: /usr/lib/x86_64-linux-gnu/libcrypto.so
 gateway: CMakeFiles/gateway.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/timsus/projects/COAproject/gateway/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable gateway"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/timsus/projects/COAproject/gateway/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable gateway"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gateway.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

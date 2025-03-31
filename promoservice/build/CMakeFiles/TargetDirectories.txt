@@ -1,0 +1,6 @@
+/home/timsus/projects/COAproject/promoservice/build/CMakeFiles/promoservice.dir
+/home/timsus/projects/COAproject/promoservice/build/CMakeFiles/edit_cache.dir
+/home/timsus/projects/COAproject/promoservice/build/CMakeFiles/rebuild_cache.dir
+/home/timsus/projects/COAproject/promoservice/build/tests/CMakeFiles/promoservice_tests.dir
+/home/timsus/projects/COAproject/promoservice/build/tests/CMakeFiles/edit_cache.dir
+/home/timsus/projects/COAproject/promoservice/build/tests/CMakeFiles/rebuild_cache.dir
