@@ -14,9 +14,11 @@ namespace gateway {
 void RunServer(const std::string& server_address, 
                const std::string& authmanager_address,
                const std::string& promomanager_address) {
+
     AuthServiceProxyImpl authService(
         grpc::CreateChannel(authmanager_address, grpc::InsecureChannelCredentials())
     );
+    
     PromoServiceProxyImpl promoService(
         grpc::CreateChannel(promomanager_address, grpc::InsecureChannelCredentials()),
         grpc::CreateChannel(authmanager_address, grpc::InsecureChannelCredentials())

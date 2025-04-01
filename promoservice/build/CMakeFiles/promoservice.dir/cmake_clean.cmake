@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/promoservice.dir/PromoServiceImpl.cpp.o"
   "CMakeFiles/promoservice.dir/PromoServiceImpl.cpp.o.d"
-  "CMakeFiles/promoservice.dir/db_helper.cpp.o"
-  "CMakeFiles/promoservice.dir/db_helper.cpp.o.d"
+  "CMakeFiles/promoservice.dir/dbHelper.cpp.o"
+  "CMakeFiles/promoservice.dir/dbHelper.cpp.o.d"
   "CMakeFiles/promoservice.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.o"
   "CMakeFiles/promoservice.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.o.d"
   "CMakeFiles/promoservice.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o"

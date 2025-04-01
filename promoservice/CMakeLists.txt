@@ -16,7 +16,7 @@ include_directories(${Protobuf_INCLUDE_DIRS})
 set(SOURCES
     main.cpp
     PromoServiceImpl.cpp
-    db_helper.cpp
+    dbHelper.cpp
     ${GENERATED_DIR}/promo.pb.cc
     ${GENERATED_DIR}/promo.grpc.pb.cc
 )

@@ -97,19 +97,19 @@ CMakeFiles/promoservice.dir/PromoServiceImpl.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/promoservice.dir/PromoServiceImpl.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/timsus/projects/COAproject/promoservice/PromoServiceImpl.cpp -o CMakeFiles/promoservice.dir/PromoServiceImpl.cpp.s
 
-CMakeFiles/promoservice.dir/db_helper.cpp.o: CMakeFiles/promoservice.dir/flags.make
-CMakeFiles/promoservice.dir/db_helper.cpp.o: /home/timsus/projects/COAproject/promoservice/db_helper.cpp
-CMakeFiles/promoservice.dir/db_helper.cpp.o: CMakeFiles/promoservice.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timsus/projects/COAproject/promoservice/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/promoservice.dir/db_helper.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/promoservice.dir/db_helper.cpp.o -MF CMakeFiles/promoservice.dir/db_helper.cpp.o.d -o CMakeFiles/promoservice.dir/db_helper.cpp.o -c /home/timsus/projects/COAproject/promoservice/db_helper.cpp
+CMakeFiles/promoservice.dir/dbHelper.cpp.o: CMakeFiles/promoservice.dir/flags.make
+CMakeFiles/promoservice.dir/dbHelper.cpp.o: /home/timsus/projects/COAproject/promoservice/dbHelper.cpp
+CMakeFiles/promoservice.dir/dbHelper.cpp.o: CMakeFiles/promoservice.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timsus/projects/COAproject/promoservice/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/promoservice.dir/dbHelper.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/promoservice.dir/dbHelper.cpp.o -MF CMakeFiles/promoservice.dir/dbHelper.cpp.o.d -o CMakeFiles/promoservice.dir/dbHelper.cpp.o -c /home/timsus/projects/COAproject/promoservice/dbHelper.cpp
 
-CMakeFiles/promoservice.dir/db_helper.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/promoservice.dir/db_helper.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/timsus/projects/COAproject/promoservice/db_helper.cpp > CMakeFiles/promoservice.dir/db_helper.cpp.i
+CMakeFiles/promoservice.dir/dbHelper.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/promoservice.dir/dbHelper.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/timsus/projects/COAproject/promoservice/dbHelper.cpp > CMakeFiles/promoservice.dir/dbHelper.cpp.i
 
-CMakeFiles/promoservice.dir/db_helper.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/promoservice.dir/db_helper.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/timsus/projects/COAproject/promoservice/db_helper.cpp -o CMakeFiles/promoservice.dir/db_helper.cpp.s
+CMakeFiles/promoservice.dir/dbHelper.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/promoservice.dir/dbHelper.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/timsus/projects/COAproject/promoservice/dbHelper.cpp -o CMakeFiles/promoservice.dir/dbHelper.cpp.s
 
 CMakeFiles/promoservice.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o: CMakeFiles/promoservice.dir/flags.make
 CMakeFiles/promoservice.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o: /home/timsus/projects/COAproject/proto/generated/promo.pb.cc
@@ -143,7 +143,7 @@ CMakeFiles/promoservice.dir/home/timsus/projects/COAproject/proto/generated/prom
 promoservice_OBJECTS = \
 "CMakeFiles/promoservice.dir/main.cpp.o" \
 "CMakeFiles/promoservice.dir/PromoServiceImpl.cpp.o" \
-"CMakeFiles/promoservice.dir/db_helper.cpp.o" \
+"CMakeFiles/promoservice.dir/dbHelper.cpp.o" \
 "CMakeFiles/promoservice.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o" \
 "CMakeFiles/promoservice.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.o"
 
@@ -152,7 +152,7 @@ promoservice_EXTERNAL_OBJECTS =
 
 promoservice: CMakeFiles/promoservice.dir/main.cpp.o
 promoservice: CMakeFiles/promoservice.dir/PromoServiceImpl.cpp.o
-promoservice: CMakeFiles/promoservice.dir/db_helper.cpp.o
+promoservice: CMakeFiles/promoservice.dir/dbHelper.cpp.o
 promoservice: CMakeFiles/promoservice.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o
 promoservice: CMakeFiles/promoservice.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.o
 promoservice: CMakeFiles/promoservice.dir/build.make

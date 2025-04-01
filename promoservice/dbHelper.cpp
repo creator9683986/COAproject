@@ -1,5 +1,5 @@
-#ifndef DB_HELPER_H
-#define DB_HELPER_H
+#ifndef DBHELPER_H
+#define DBHELPER_H
 
 #include <pqxx/pqxx>
 #include <string>
@@ -26,4 +26,4 @@ private:
     std::string conn_str_;
 };
 
-#endif // DB_HELPER_H
+#endif // DBHELPER_H

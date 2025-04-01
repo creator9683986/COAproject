@@ -9,7 +9,7 @@ message User {
     string email = 3;
     string first_name = 4;
     string last_name = 5;
-    string birth_date = 6; // Формат: YYYY-MM-DD
+    string birth_date = 6;
     string phone = 7;
     string created_at = 8;
     string updated_at = 9;
@@ -35,7 +35,6 @@ message LoginResponse {
 
 // Запрос/ответ для обновления профиля
 message UpdateProfileRequest {
-    // Здесь для простоты используется token, равный логину
     string token = 1;
     string first_name = 2;
     string last_name = 3;
@@ -51,7 +50,7 @@ message GetProfileRequest {
 
 // Запрос для удаления пользователя
 message DeleteUserRequest {
-    string token = 1;  // Токен, который используется для аутентификации (с которого можно получить логин)
+    string token = 1;
 }
 
 // Определение сервиса аутентификации

@@ -166,29 +166,29 @@ PromoServiceImpl.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/promoservice.dir/build.make CMakeFiles/promoservice.dir/PromoServiceImpl.cpp.s
 .PHONY : PromoServiceImpl.cpp.s
 
-db_helper.o: db_helper.cpp.o
-.PHONY : db_helper.o
+dbHelper.o: dbHelper.cpp.o
+.PHONY : dbHelper.o
 
 # target to build an object file
-db_helper.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/promoservice.dir/build.make CMakeFiles/promoservice.dir/db_helper.cpp.o
-.PHONY : db_helper.cpp.o
+dbHelper.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/promoservice.dir/build.make CMakeFiles/promoservice.dir/dbHelper.cpp.o
+.PHONY : dbHelper.cpp.o
 
-db_helper.i: db_helper.cpp.i
-.PHONY : db_helper.i
+dbHelper.i: dbHelper.cpp.i
+.PHONY : dbHelper.i
 
 # target to preprocess a source file
-db_helper.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/promoservice.dir/build.make CMakeFiles/promoservice.dir/db_helper.cpp.i
-.PHONY : db_helper.cpp.i
+dbHelper.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/promoservice.dir/build.make CMakeFiles/promoservice.dir/dbHelper.cpp.i
+.PHONY : dbHelper.cpp.i
 
-db_helper.s: db_helper.cpp.s
-.PHONY : db_helper.s
+dbHelper.s: dbHelper.cpp.s
+.PHONY : dbHelper.s
 
 # target to generate assembly for a file
-db_helper.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/promoservice.dir/build.make CMakeFiles/promoservice.dir/db_helper.cpp.s
-.PHONY : db_helper.cpp.s
+dbHelper.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/promoservice.dir/build.make CMakeFiles/promoservice.dir/dbHelper.cpp.s
+.PHONY : dbHelper.cpp.s
 
 home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.o: home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.o
 .PHONY : home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.o
@@ -275,9 +275,9 @@ help:
 	@echo "... PromoServiceImpl.o"
 	@echo "... PromoServiceImpl.i"
 	@echo "... PromoServiceImpl.s"
-	@echo "... db_helper.o"
-	@echo "... db_helper.i"
-	@echo "... db_helper.s"
+	@echo "... dbHelper.o"
+	@echo "... dbHelper.i"
+	@echo "... dbHelper.s"
 	@echo "... home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.o"
 	@echo "... home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.i"
 	@echo "... home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.s"

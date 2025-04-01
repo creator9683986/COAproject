@@ -15,7 +15,6 @@ void RunServer(const std::string& server_address, const std::string& db_conn_str
     builder.RegisterService(&service);
 
     std::unique_ptr<Server> server(builder.BuildAndStart());
-    std::cout << "Promo Service listening on " << server_address << std::endl;
     server->Wait();
 }
 

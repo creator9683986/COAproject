@@ -438,7 +438,7 @@ tests/CMakeFiles/promoservice_tests.dir/__/PromoServiceImpl.cpp.o: \
  /usr/include/grpcpp/support/proto_buffer_writer.h \
  /usr/include/grpcpp/impl/codegen/serialization_traits.h \
  /usr/include/grpcpp/support/stub_options.h \
- /home/timsus/projects/COAproject/promoservice/db_helper.cpp \
+ /home/timsus/projects/COAproject/promoservice/dbHelper.cpp \
  /usr/include/pqxx/pqxx /usr/include/pqxx/internal/header-pre.hxx \
  /usr/include/c++/13/version /usr/include/pqxx/internal/cxx-features.hxx \
  /usr/include/pqxx/config-public-compiler.h /usr/include/c++/13/ciso646 \

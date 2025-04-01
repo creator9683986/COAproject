@@ -9,7 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/timsus/projects/COAproject/promoservice/PromoServiceImpl.cpp" "CMakeFiles/promoservice.dir/PromoServiceImpl.cpp.o" "gcc" "CMakeFiles/promoservice.dir/PromoServiceImpl.cpp.o.d"
-  "/home/timsus/projects/COAproject/promoservice/db_helper.cpp" "CMakeFiles/promoservice.dir/db_helper.cpp.o" "gcc" "CMakeFiles/promoservice.dir/db_helper.cpp.o.d"
+  "/home/timsus/projects/COAproject/promoservice/dbHelper.cpp" "CMakeFiles/promoservice.dir/dbHelper.cpp.o" "gcc" "CMakeFiles/promoservice.dir/dbHelper.cpp.o.d"
   "/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc" "CMakeFiles/promoservice.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.o" "gcc" "CMakeFiles/promoservice.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.o.d"
   "/home/timsus/projects/COAproject/proto/generated/promo.pb.cc" "CMakeFiles/promoservice.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o" "gcc" "CMakeFiles/promoservice.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o.d"
   "/home/timsus/projects/COAproject/promoservice/main.cpp" "CMakeFiles/promoservice.dir/main.cpp.o" "gcc" "CMakeFiles/promoservice.dir/main.cpp.o.d"
