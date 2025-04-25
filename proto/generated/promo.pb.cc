@@ -128,8 +128,37 @@ struct ListPromoCodesResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ListPromoCodesResponseDefaultTypeInternal _ListPromoCodesResponse_default_instance_;
+PROTOBUF_CONSTEXPR ClickPromoCodeRequest::ClickPromoCodeRequest(
+    ::_pbi::ConstantInitialized)
+  : token_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , user_id_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , promo_id_(int64_t{0}){}
+struct ClickPromoCodeRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ClickPromoCodeRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ClickPromoCodeRequestDefaultTypeInternal() {}
+  union {
+    ClickPromoCodeRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ClickPromoCodeRequestDefaultTypeInternal _ClickPromoCodeRequest_default_instance_;
+PROTOBUF_CONSTEXPR CommentPromoCodeRequest::CommentPromoCodeRequest(
+    ::_pbi::ConstantInitialized)
+  : token_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , user_id_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , comment_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , promo_id_(int64_t{0}){}
+struct CommentPromoCodeRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CommentPromoCodeRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CommentPromoCodeRequestDefaultTypeInternal() {}
+  union {
+    CommentPromoCodeRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CommentPromoCodeRequestDefaultTypeInternal _CommentPromoCodeRequest_default_instance_;
 }  // namespace promo
-static ::_pb::Metadata file_level_metadata_promo_2eproto[7];
+static ::_pb::Metadata file_level_metadata_promo_2eproto[9];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_promo_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_promo_2eproto = nullptr;
 
@@ -206,6 +235,25 @@ const uint32_t TableStruct_promo_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(pr
   PROTOBUF_FIELD_OFFSET(::promo::ListPromoCodesResponse, total_count_),
   PROTOBUF_FIELD_OFFSET(::promo::ListPromoCodesResponse, page_),
   PROTOBUF_FIELD_OFFSET(::promo::ListPromoCodesResponse, page_size_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::promo::ClickPromoCodeRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::promo::ClickPromoCodeRequest, token_),
+  PROTOBUF_FIELD_OFFSET(::promo::ClickPromoCodeRequest, promo_id_),
+  PROTOBUF_FIELD_OFFSET(::promo::ClickPromoCodeRequest, user_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::promo::CommentPromoCodeRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::promo::CommentPromoCodeRequest, token_),
+  PROTOBUF_FIELD_OFFSET(::promo::CommentPromoCodeRequest, promo_id_),
+  PROTOBUF_FIELD_OFFSET(::promo::CommentPromoCodeRequest, user_id_),
+  PROTOBUF_FIELD_OFFSET(::promo::CommentPromoCodeRequest, comment_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::promo::PromoCode)},
@@ -215,6 +263,8 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 45, -1, -1, sizeof(::promo::GetPromoCodeRequest)},
   { 53, -1, -1, sizeof(::promo::ListPromoCodesRequest)},
   { 62, -1, -1, sizeof(::promo::ListPromoCodesResponse)},
+  { 72, -1, -1, sizeof(::promo::ClickPromoCodeRequest)},
+  { 81, -1, -1, sizeof(::promo::CommentPromoCodeRequest)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -225,6 +275,8 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::promo::_GetPromoCodeRequest_default_instance_._instance,
   &::promo::_ListPromoCodesRequest_default_instance_._instance,
   &::promo::_ListPromoCodesResponse_default_instance_._instance,
+  &::promo::_ClickPromoCodeRequest_default_instance_._instance,
+  &::promo::_CommentPromoCodeRequest_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_promo_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -245,23 +297,30 @@ const char descriptor_table_protodef_promo_2eproto[] PROTOBUF_SECTION_VARIABLE(p
   "\001 \001(\t\022\014\n\004page\030\002 \001(\005\022\021\n\tpage_size\030\003 \001(\005\"u"
   "\n\026ListPromoCodesResponse\022%\n\013promo_codes\030"
   "\001 \003(\0132\020.promo.PromoCode\022\023\n\013total_count\030\002"
-  " \001(\005\022\014\n\004page\030\003 \001(\005\022\021\n\tpage_size\030\004 \001(\0052\353\002"
-  "\n\014PromoService\022B\n\017CreatePromoCode\022\035.prom"
-  "o.CreatePromoCodeRequest\032\020.promo.PromoCo"
-  "de\022B\n\017UpdatePromoCode\022\035.promo.UpdateProm"
-  "oCodeRequest\032\020.promo.PromoCode\022B\n\017Delete"
-  "PromoCode\022\035.promo.DeletePromoCodeRequest"
-  "\032\020.promo.PromoCode\022@\n\020GetPromoCodeById\022\032"
-  ".promo.GetPromoCodeRequest\032\020.promo.Promo"
-  "Code\022M\n\016ListPromoCodes\022\034.promo.ListPromo"
-  "CodesRequest\032\035.promo.ListPromoCodesRespo"
-  "nseb\006proto3"
+  " \001(\005\022\014\n\004page\030\003 \001(\005\022\021\n\tpage_size\030\004 \001(\005\"I\n"
+  "\025ClickPromoCodeRequest\022\r\n\005token\030\001 \001(\t\022\020\n"
+  "\010promo_id\030\002 \001(\003\022\017\n\007user_id\030\003 \001(\t\"\\\n\027Comm"
+  "entPromoCodeRequest\022\r\n\005token\030\001 \001(\t\022\020\n\010pr"
+  "omo_id\030\002 \001(\003\022\017\n\007user_id\030\003 \001(\t\022\017\n\007comment"
+  "\030\004 \001(\t2\363\003\n\014PromoService\022B\n\017CreatePromoCo"
+  "de\022\035.promo.CreatePromoCodeRequest\032\020.prom"
+  "o.PromoCode\022B\n\017UpdatePromoCode\022\035.promo.U"
+  "pdatePromoCodeRequest\032\020.promo.PromoCode\022"
+  "B\n\017DeletePromoCode\022\035.promo.DeletePromoCo"
+  "deRequest\032\020.promo.PromoCode\022@\n\020GetPromoC"
+  "odeById\022\032.promo.GetPromoCodeRequest\032\020.pr"
+  "omo.PromoCode\022M\n\016ListPromoCodes\022\034.promo."
+  "ListPromoCodesRequest\032\035.promo.ListPromoC"
+  "odesResponse\022@\n\016ClickPromoCode\022\034.promo.C"
+  "lickPromoCodeRequest\032\020.promo.PromoCode\022D"
+  "\n\020CommentPromoCode\022\036.promo.CommentPromoC"
+  "odeRequest\032\020.promo.PromoCodeb\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_promo_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_promo_2eproto = {
-    false, false, 1091, descriptor_table_protodef_promo_2eproto,
+    false, false, 1396, descriptor_table_protodef_promo_2eproto,
     "promo.proto",
-    &descriptor_table_promo_2eproto_once, nullptr, 0, 7,
+    &descriptor_table_promo_2eproto_once, nullptr, 0, 9,
     schemas, file_default_instances, TableStruct_promo_2eproto::offsets,
     file_level_metadata_promo_2eproto, file_level_enum_descriptors_promo_2eproto,
     file_level_service_descriptors_promo_2eproto,
@@ -2500,6 +2559,592 @@ void ListPromoCodesResponse::InternalSwap(ListPromoCodesResponse* other) {
       file_level_metadata_promo_2eproto[6]);
 }
 
+// ===================================================================
+
+class ClickPromoCodeRequest::_Internal {
+ public:
+};
+
+ClickPromoCodeRequest::ClickPromoCodeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:promo.ClickPromoCodeRequest)
+}
+ClickPromoCodeRequest::ClickPromoCodeRequest(const ClickPromoCodeRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  token_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    token_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_token().empty()) {
+    token_.Set(from._internal_token(), 
+      GetArenaForAllocation());
+  }
+  user_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    user_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_user_id().empty()) {
+    user_id_.Set(from._internal_user_id(), 
+      GetArenaForAllocation());
+  }
+  promo_id_ = from.promo_id_;
+  // @@protoc_insertion_point(copy_constructor:promo.ClickPromoCodeRequest)
+}
+
+inline void ClickPromoCodeRequest::SharedCtor() {
+token_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  token_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+user_id_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  user_id_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+promo_id_ = int64_t{0};
+}
+
+ClickPromoCodeRequest::~ClickPromoCodeRequest() {
+  // @@protoc_insertion_point(destructor:promo.ClickPromoCodeRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void ClickPromoCodeRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  token_.Destroy();
+  user_id_.Destroy();
+}
+
+void ClickPromoCodeRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void ClickPromoCodeRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:promo.ClickPromoCodeRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  token_.ClearToEmpty();
+  user_id_.ClearToEmpty();
+  promo_id_ = int64_t{0};
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ClickPromoCodeRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string token = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_token();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "promo.ClickPromoCodeRequest.token"));
+        } else
+          goto handle_unusual;
+        continue;
+      // int64 promo_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          promo_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string user_id = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          auto str = _internal_mutable_user_id();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "promo.ClickPromoCodeRequest.user_id"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* ClickPromoCodeRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:promo.ClickPromoCodeRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string token = 1;
+  if (!this->_internal_token().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_token().data(), static_cast<int>(this->_internal_token().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "promo.ClickPromoCodeRequest.token");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_token(), target);
+  }
+
+  // int64 promo_id = 2;
+  if (this->_internal_promo_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt64ToArray(2, this->_internal_promo_id(), target);
+  }
+
+  // string user_id = 3;
+  if (!this->_internal_user_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_user_id().data(), static_cast<int>(this->_internal_user_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "promo.ClickPromoCodeRequest.user_id");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_user_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:promo.ClickPromoCodeRequest)
+  return target;
+}
+
+size_t ClickPromoCodeRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:promo.ClickPromoCodeRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string token = 1;
+  if (!this->_internal_token().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_token());
+  }
+
+  // string user_id = 3;
+  if (!this->_internal_user_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_user_id());
+  }
+
+  // int64 promo_id = 2;
+  if (this->_internal_promo_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_promo_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ClickPromoCodeRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ClickPromoCodeRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ClickPromoCodeRequest::GetClassData() const { return &_class_data_; }
+
+void ClickPromoCodeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<ClickPromoCodeRequest *>(to)->MergeFrom(
+      static_cast<const ClickPromoCodeRequest &>(from));
+}
+
+
+void ClickPromoCodeRequest::MergeFrom(const ClickPromoCodeRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:promo.ClickPromoCodeRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_token().empty()) {
+    _internal_set_token(from._internal_token());
+  }
+  if (!from._internal_user_id().empty()) {
+    _internal_set_user_id(from._internal_user_id());
+  }
+  if (from._internal_promo_id() != 0) {
+    _internal_set_promo_id(from._internal_promo_id());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ClickPromoCodeRequest::CopyFrom(const ClickPromoCodeRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:promo.ClickPromoCodeRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ClickPromoCodeRequest::IsInitialized() const {
+  return true;
+}
+
+void ClickPromoCodeRequest::InternalSwap(ClickPromoCodeRequest* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &token_, lhs_arena,
+      &other->token_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &user_id_, lhs_arena,
+      &other->user_id_, rhs_arena
+  );
+  swap(promo_id_, other->promo_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ClickPromoCodeRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_promo_2eproto_getter, &descriptor_table_promo_2eproto_once,
+      file_level_metadata_promo_2eproto[7]);
+}
+
+// ===================================================================
+
+class CommentPromoCodeRequest::_Internal {
+ public:
+};
+
+CommentPromoCodeRequest::CommentPromoCodeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:promo.CommentPromoCodeRequest)
+}
+CommentPromoCodeRequest::CommentPromoCodeRequest(const CommentPromoCodeRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  token_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    token_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_token().empty()) {
+    token_.Set(from._internal_token(), 
+      GetArenaForAllocation());
+  }
+  user_id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    user_id_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_user_id().empty()) {
+    user_id_.Set(from._internal_user_id(), 
+      GetArenaForAllocation());
+  }
+  comment_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    comment_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_comment().empty()) {
+    comment_.Set(from._internal_comment(), 
+      GetArenaForAllocation());
+  }
+  promo_id_ = from.promo_id_;
+  // @@protoc_insertion_point(copy_constructor:promo.CommentPromoCodeRequest)
+}
+
+inline void CommentPromoCodeRequest::SharedCtor() {
+token_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  token_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+user_id_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  user_id_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+comment_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  comment_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+promo_id_ = int64_t{0};
+}
+
+CommentPromoCodeRequest::~CommentPromoCodeRequest() {
+  // @@protoc_insertion_point(destructor:promo.CommentPromoCodeRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void CommentPromoCodeRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  token_.Destroy();
+  user_id_.Destroy();
+  comment_.Destroy();
+}
+
+void CommentPromoCodeRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void CommentPromoCodeRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:promo.CommentPromoCodeRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  token_.ClearToEmpty();
+  user_id_.ClearToEmpty();
+  comment_.ClearToEmpty();
+  promo_id_ = int64_t{0};
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* CommentPromoCodeRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string token = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_token();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "promo.CommentPromoCodeRequest.token"));
+        } else
+          goto handle_unusual;
+        continue;
+      // int64 promo_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          promo_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string user_id = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          auto str = _internal_mutable_user_id();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "promo.CommentPromoCodeRequest.user_id"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string comment = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          auto str = _internal_mutable_comment();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "promo.CommentPromoCodeRequest.comment"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* CommentPromoCodeRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:promo.CommentPromoCodeRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string token = 1;
+  if (!this->_internal_token().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_token().data(), static_cast<int>(this->_internal_token().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "promo.CommentPromoCodeRequest.token");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_token(), target);
+  }
+
+  // int64 promo_id = 2;
+  if (this->_internal_promo_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt64ToArray(2, this->_internal_promo_id(), target);
+  }
+
+  // string user_id = 3;
+  if (!this->_internal_user_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_user_id().data(), static_cast<int>(this->_internal_user_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "promo.CommentPromoCodeRequest.user_id");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_user_id(), target);
+  }
+
+  // string comment = 4;
+  if (!this->_internal_comment().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_comment().data(), static_cast<int>(this->_internal_comment().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "promo.CommentPromoCodeRequest.comment");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_comment(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:promo.CommentPromoCodeRequest)
+  return target;
+}
+
+size_t CommentPromoCodeRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:promo.CommentPromoCodeRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string token = 1;
+  if (!this->_internal_token().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_token());
+  }
+
+  // string user_id = 3;
+  if (!this->_internal_user_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_user_id());
+  }
+
+  // string comment = 4;
+  if (!this->_internal_comment().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_comment());
+  }
+
+  // int64 promo_id = 2;
+  if (this->_internal_promo_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_promo_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CommentPromoCodeRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    CommentPromoCodeRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CommentPromoCodeRequest::GetClassData() const { return &_class_data_; }
+
+void CommentPromoCodeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<CommentPromoCodeRequest *>(to)->MergeFrom(
+      static_cast<const CommentPromoCodeRequest &>(from));
+}
+
+
+void CommentPromoCodeRequest::MergeFrom(const CommentPromoCodeRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:promo.CommentPromoCodeRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_token().empty()) {
+    _internal_set_token(from._internal_token());
+  }
+  if (!from._internal_user_id().empty()) {
+    _internal_set_user_id(from._internal_user_id());
+  }
+  if (!from._internal_comment().empty()) {
+    _internal_set_comment(from._internal_comment());
+  }
+  if (from._internal_promo_id() != 0) {
+    _internal_set_promo_id(from._internal_promo_id());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void CommentPromoCodeRequest::CopyFrom(const CommentPromoCodeRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:promo.CommentPromoCodeRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CommentPromoCodeRequest::IsInitialized() const {
+  return true;
+}
+
+void CommentPromoCodeRequest::InternalSwap(CommentPromoCodeRequest* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &token_, lhs_arena,
+      &other->token_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &user_id_, lhs_arena,
+      &other->user_id_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &comment_, lhs_arena,
+      &other->comment_, rhs_arena
+  );
+  swap(promo_id_, other->promo_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata CommentPromoCodeRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_promo_2eproto_getter, &descriptor_table_promo_2eproto_once,
+      file_level_metadata_promo_2eproto[8]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace promo
 PROTOBUF_NAMESPACE_OPEN
@@ -2530,6 +3175,14 @@ Arena::CreateMaybeMessage< ::promo::ListPromoCodesRequest >(Arena* arena) {
 template<> PROTOBUF_NOINLINE ::promo::ListPromoCodesResponse*
 Arena::CreateMaybeMessage< ::promo::ListPromoCodesResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::promo::ListPromoCodesResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::promo::ClickPromoCodeRequest*
+Arena::CreateMaybeMessage< ::promo::ClickPromoCodeRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::promo::ClickPromoCodeRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::promo::CommentPromoCodeRequest*
+Arena::CreateMaybeMessage< ::promo::CommentPromoCodeRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::promo::CommentPromoCodeRequest >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

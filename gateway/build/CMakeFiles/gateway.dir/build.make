@@ -111,10 +111,38 @@ CMakeFiles/gateway.dir/src/PromoServiceProxyImpl.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gateway.dir/src/PromoServiceProxyImpl.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/timsus/projects/COAproject/gateway/src/PromoServiceProxyImpl.cpp -o CMakeFiles/gateway.dir/src/PromoServiceProxyImpl.cpp.s
 
+CMakeFiles/gateway.dir/src/ClickAndCommentService.cpp.o: CMakeFiles/gateway.dir/flags.make
+CMakeFiles/gateway.dir/src/ClickAndCommentService.cpp.o: /home/timsus/projects/COAproject/gateway/src/ClickAndCommentService.cpp
+CMakeFiles/gateway.dir/src/ClickAndCommentService.cpp.o: CMakeFiles/gateway.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timsus/projects/COAproject/gateway/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/gateway.dir/src/ClickAndCommentService.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gateway.dir/src/ClickAndCommentService.cpp.o -MF CMakeFiles/gateway.dir/src/ClickAndCommentService.cpp.o.d -o CMakeFiles/gateway.dir/src/ClickAndCommentService.cpp.o -c /home/timsus/projects/COAproject/gateway/src/ClickAndCommentService.cpp
+
+CMakeFiles/gateway.dir/src/ClickAndCommentService.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gateway.dir/src/ClickAndCommentService.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/timsus/projects/COAproject/gateway/src/ClickAndCommentService.cpp > CMakeFiles/gateway.dir/src/ClickAndCommentService.cpp.i
+
+CMakeFiles/gateway.dir/src/ClickAndCommentService.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gateway.dir/src/ClickAndCommentService.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/timsus/projects/COAproject/gateway/src/ClickAndCommentService.cpp -o CMakeFiles/gateway.dir/src/ClickAndCommentService.cpp.s
+
+CMakeFiles/gateway.dir/src/KafkaProducer.cpp.o: CMakeFiles/gateway.dir/flags.make
+CMakeFiles/gateway.dir/src/KafkaProducer.cpp.o: /home/timsus/projects/COAproject/gateway/src/KafkaProducer.cpp
+CMakeFiles/gateway.dir/src/KafkaProducer.cpp.o: CMakeFiles/gateway.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timsus/projects/COAproject/gateway/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/gateway.dir/src/KafkaProducer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gateway.dir/src/KafkaProducer.cpp.o -MF CMakeFiles/gateway.dir/src/KafkaProducer.cpp.o.d -o CMakeFiles/gateway.dir/src/KafkaProducer.cpp.o -c /home/timsus/projects/COAproject/gateway/src/KafkaProducer.cpp
+
+CMakeFiles/gateway.dir/src/KafkaProducer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gateway.dir/src/KafkaProducer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/timsus/projects/COAproject/gateway/src/KafkaProducer.cpp > CMakeFiles/gateway.dir/src/KafkaProducer.cpp.i
+
+CMakeFiles/gateway.dir/src/KafkaProducer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gateway.dir/src/KafkaProducer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/timsus/projects/COAproject/gateway/src/KafkaProducer.cpp -o CMakeFiles/gateway.dir/src/KafkaProducer.cpp.s
+
 CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.pb.cc.o: CMakeFiles/gateway.dir/flags.make
 CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.pb.cc.o: /home/timsus/projects/COAproject/proto/generated/auth.pb.cc
 CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.pb.cc.o: CMakeFiles/gateway.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timsus/projects/COAproject/gateway/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.pb.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timsus/projects/COAproject/gateway/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.pb.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.pb.cc.o -MF CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.pb.cc.o.d -o CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.pb.cc.o -c /home/timsus/projects/COAproject/proto/generated/auth.pb.cc
 
 CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.pb.cc.i: cmake_force
@@ -128,7 +156,7 @@ CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.pb.c
 CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc.o: CMakeFiles/gateway.dir/flags.make
 CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc.o: /home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc
 CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc.o: CMakeFiles/gateway.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timsus/projects/COAproject/gateway/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timsus/projects/COAproject/gateway/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc.o -MF CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc.o.d -o CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc.o -c /home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc
 
 CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc.i: cmake_force
@@ -142,7 +170,7 @@ CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.grpc
 CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o: CMakeFiles/gateway.dir/flags.make
 CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o: /home/timsus/projects/COAproject/proto/generated/promo.pb.cc
 CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o: CMakeFiles/gateway.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timsus/projects/COAproject/gateway/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timsus/projects/COAproject/gateway/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o -MF CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o.d -o CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o -c /home/timsus/projects/COAproject/proto/generated/promo.pb.cc
 
 CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.i: cmake_force
@@ -156,7 +184,7 @@ CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.
 CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.o: CMakeFiles/gateway.dir/flags.make
 CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.o: /home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc
 CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.o: CMakeFiles/gateway.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timsus/projects/COAproject/gateway/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timsus/projects/COAproject/gateway/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.o -MF CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.o.d -o CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.o -c /home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc
 
 CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.i: cmake_force
@@ -172,6 +200,8 @@ gateway_OBJECTS = \
 "CMakeFiles/gateway.dir/src/main.cpp.o" \
 "CMakeFiles/gateway.dir/src/AuthServiceProxyImpl.cpp.o" \
 "CMakeFiles/gateway.dir/src/PromoServiceProxyImpl.cpp.o" \
+"CMakeFiles/gateway.dir/src/ClickAndCommentService.cpp.o" \
+"CMakeFiles/gateway.dir/src/KafkaProducer.cpp.o" \
 "CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.pb.cc.o" \
 "CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc.o" \
 "CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o" \
@@ -183,6 +213,8 @@ gateway_EXTERNAL_OBJECTS =
 gateway: CMakeFiles/gateway.dir/src/main.cpp.o
 gateway: CMakeFiles/gateway.dir/src/AuthServiceProxyImpl.cpp.o
 gateway: CMakeFiles/gateway.dir/src/PromoServiceProxyImpl.cpp.o
+gateway: CMakeFiles/gateway.dir/src/ClickAndCommentService.cpp.o
+gateway: CMakeFiles/gateway.dir/src/KafkaProducer.cpp.o
 gateway: CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.pb.cc.o
 gateway: CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc.o
 gateway: CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o
@@ -254,7 +286,7 @@ gateway: /usr/local/lib/libabsl_spinlock_wait.a
 gateway: /usr/lib/x86_64-linux-gnu/libssl.so
 gateway: /usr/lib/x86_64-linux-gnu/libcrypto.so
 gateway: CMakeFiles/gateway.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/timsus/projects/COAproject/gateway/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable gateway"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/timsus/projects/COAproject/gateway/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable gateway"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gateway.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

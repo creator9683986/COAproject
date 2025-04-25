@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/timsus/projects/COAproject/gateway/../proto/generated
+CXX_INCLUDES = -I/usr/include/librdkafka -I/home/timsus/projects/COAproject/gateway/../proto/generated
 
 CXX_FLAGS = -std=gnu++17 -pthread
 

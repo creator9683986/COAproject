@@ -437,4 +437,6 @@ CMakeFiles/gateway.dir/src/main.cpp.o: \
  /usr/include/grpcpp/support/stub_options.h \
  /home/timsus/projects/COAproject/gateway/src/PromoServiceProxyImpl.h \
  /home/timsus/projects/COAproject/gateway/../proto/generated/promo.grpc.pb.h \
- /home/timsus/projects/COAproject/gateway/../proto/generated/promo.pb.h
+ /home/timsus/projects/COAproject/gateway/../proto/generated/promo.pb.h \
+ /home/timsus/projects/COAproject/gateway/src/KafkaProducer.h \
+ /usr/include/librdkafka/rdkafkacpp.h

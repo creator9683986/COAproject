@@ -262,6 +262,54 @@ src/AuthServiceProxyImpl.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gateway.dir/build.make CMakeFiles/gateway.dir/src/AuthServiceProxyImpl.cpp.s
 .PHONY : src/AuthServiceProxyImpl.cpp.s
 
+src/ClickAndCommentService.o: src/ClickAndCommentService.cpp.o
+.PHONY : src/ClickAndCommentService.o
+
+# target to build an object file
+src/ClickAndCommentService.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gateway.dir/build.make CMakeFiles/gateway.dir/src/ClickAndCommentService.cpp.o
+.PHONY : src/ClickAndCommentService.cpp.o
+
+src/ClickAndCommentService.i: src/ClickAndCommentService.cpp.i
+.PHONY : src/ClickAndCommentService.i
+
+# target to preprocess a source file
+src/ClickAndCommentService.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gateway.dir/build.make CMakeFiles/gateway.dir/src/ClickAndCommentService.cpp.i
+.PHONY : src/ClickAndCommentService.cpp.i
+
+src/ClickAndCommentService.s: src/ClickAndCommentService.cpp.s
+.PHONY : src/ClickAndCommentService.s
+
+# target to generate assembly for a file
+src/ClickAndCommentService.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gateway.dir/build.make CMakeFiles/gateway.dir/src/ClickAndCommentService.cpp.s
+.PHONY : src/ClickAndCommentService.cpp.s
+
+src/KafkaProducer.o: src/KafkaProducer.cpp.o
+.PHONY : src/KafkaProducer.o
+
+# target to build an object file
+src/KafkaProducer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gateway.dir/build.make CMakeFiles/gateway.dir/src/KafkaProducer.cpp.o
+.PHONY : src/KafkaProducer.cpp.o
+
+src/KafkaProducer.i: src/KafkaProducer.cpp.i
+.PHONY : src/KafkaProducer.i
+
+# target to preprocess a source file
+src/KafkaProducer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gateway.dir/build.make CMakeFiles/gateway.dir/src/KafkaProducer.cpp.i
+.PHONY : src/KafkaProducer.cpp.i
+
+src/KafkaProducer.s: src/KafkaProducer.cpp.s
+.PHONY : src/KafkaProducer.s
+
+# target to generate assembly for a file
+src/KafkaProducer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gateway.dir/build.make CMakeFiles/gateway.dir/src/KafkaProducer.cpp.s
+.PHONY : src/KafkaProducer.cpp.s
+
 src/PromoServiceProxyImpl.o: src/PromoServiceProxyImpl.cpp.o
 .PHONY : src/PromoServiceProxyImpl.o
 
@@ -335,6 +383,12 @@ help:
 	@echo "... src/AuthServiceProxyImpl.o"
 	@echo "... src/AuthServiceProxyImpl.i"
 	@echo "... src/AuthServiceProxyImpl.s"
+	@echo "... src/ClickAndCommentService.o"
+	@echo "... src/ClickAndCommentService.i"
+	@echo "... src/ClickAndCommentService.s"
+	@echo "... src/KafkaProducer.o"
+	@echo "... src/KafkaProducer.i"
+	@echo "... src/KafkaProducer.s"
 	@echo "... src/PromoServiceProxyImpl.o"
 	@echo "... src/PromoServiceProxyImpl.i"
 	@echo "... src/PromoServiceProxyImpl.s"

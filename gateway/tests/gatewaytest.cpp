@@ -1,6 +1,9 @@
 #include <gtest/gtest.h>
 #include <grpcpp/grpcpp.h>
 #include "auth.grpc.pb.h"
+#include "KafkaConsumer.cpp"
+#include <thread>
+#include <chrono>
 
 class AuthServiceTest : public ::testing::Test {
 protected:
@@ -53,6 +56,9 @@ TEST_F(AuthServiceTest, RegisterUserTest) {
         EXPECT_FALSE(response.updated_at().empty());
         EXPECT_GT(response.id(), 0);
     }
+    std::this_thread::sleep_for(std::chrono::seconds(1));
+    KafkaConsumer consumer("localhost:9092", "user-registration");
+    consumer.consume();
 }
 
 TEST_F(AuthServiceTest, LoginTest) {

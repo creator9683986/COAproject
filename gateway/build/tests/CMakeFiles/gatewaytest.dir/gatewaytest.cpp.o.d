@@ -504,4 +504,8 @@ tests/CMakeFiles/gatewaytest.dir/gatewaytest.cpp.o: \
  /usr/include/grpcpp/impl/codegen/proto_buffer_writer.h \
  /usr/include/grpcpp/support/proto_buffer_writer.h \
  /usr/include/grpcpp/impl/codegen/serialization_traits.h \
- /usr/include/grpcpp/support/stub_options.h
+ /usr/include/grpcpp/support/stub_options.h \
+ /home/timsus/projects/COAproject/gateway/tests/KafkaConsumer.cpp \
+ /usr/include/librdkafka/rdkafkacpp.h /usr/include/c++/13/thread \
+ /usr/include/c++/13/bits/std_thread.h \
+ /usr/include/c++/13/bits/this_thread_sleep.h

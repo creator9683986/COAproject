@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(gateway)
+project(statservice)
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -19,21 +19,18 @@ include_directories(${Protobuf_INCLUDE_DIRS})
 
 set(SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/AuthServiceProxyImpl.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/PromoServiceProxyImpl.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ClickAndCommentService.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/KafkaProducer.cpp
     ${GENERATED_DIR}/auth.pb.cc
     ${GENERATED_DIR}/auth.grpc.pb.cc
     ${GENERATED_DIR}/promo.pb.cc
     ${GENERATED_DIR}/promo.grpc.pb.cc
 )
 
-add_executable(gateway ${SOURCES})
+add_executable(statservice ${SOURCES})
 
 add_subdirectory(tests)
 
-target_link_libraries(gateway
+target_link_libraries(statservice
     gRPC::grpc++
     grpc           
     gpr              

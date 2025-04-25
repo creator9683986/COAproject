@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/gatewaytest.dir/KafkaConsumer.cpp.o"
+  "CMakeFiles/gatewaytest.dir/KafkaConsumer.cpp.o.d"
   "CMakeFiles/gatewaytest.dir/gatewaytest.cpp.o"
   "CMakeFiles/gatewaytest.dir/gatewaytest.cpp.o.d"
   "CMakeFiles/gatewaytest.dir/home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc.o"

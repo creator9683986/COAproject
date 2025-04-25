@@ -13,6 +13,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc" "CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.o" "gcc" "CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.o.d"
   "/home/timsus/projects/COAproject/proto/generated/promo.pb.cc" "CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o" "gcc" "CMakeFiles/gateway.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o.d"
   "/home/timsus/projects/COAproject/gateway/src/AuthServiceProxyImpl.cpp" "CMakeFiles/gateway.dir/src/AuthServiceProxyImpl.cpp.o" "gcc" "CMakeFiles/gateway.dir/src/AuthServiceProxyImpl.cpp.o.d"
+  "/home/timsus/projects/COAproject/gateway/src/ClickAndCommentService.cpp" "CMakeFiles/gateway.dir/src/ClickAndCommentService.cpp.o" "gcc" "CMakeFiles/gateway.dir/src/ClickAndCommentService.cpp.o.d"
+  "/home/timsus/projects/COAproject/gateway/src/KafkaProducer.cpp" "CMakeFiles/gateway.dir/src/KafkaProducer.cpp.o" "gcc" "CMakeFiles/gateway.dir/src/KafkaProducer.cpp.o.d"
   "/home/timsus/projects/COAproject/gateway/src/PromoServiceProxyImpl.cpp" "CMakeFiles/gateway.dir/src/PromoServiceProxyImpl.cpp.o" "gcc" "CMakeFiles/gateway.dir/src/PromoServiceProxyImpl.cpp.o.d"
   "/home/timsus/projects/COAproject/gateway/src/main.cpp" "CMakeFiles/gateway.dir/src/main.cpp.o" "gcc" "CMakeFiles/gateway.dir/src/main.cpp.o.d"
   )

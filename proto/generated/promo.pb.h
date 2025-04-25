@@ -45,6 +45,12 @@ struct TableStruct_promo_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_promo_2eproto;
 namespace promo {
+class ClickPromoCodeRequest;
+struct ClickPromoCodeRequestDefaultTypeInternal;
+extern ClickPromoCodeRequestDefaultTypeInternal _ClickPromoCodeRequest_default_instance_;
+class CommentPromoCodeRequest;
+struct CommentPromoCodeRequestDefaultTypeInternal;
+extern CommentPromoCodeRequestDefaultTypeInternal _CommentPromoCodeRequest_default_instance_;
 class CreatePromoCodeRequest;
 struct CreatePromoCodeRequestDefaultTypeInternal;
 extern CreatePromoCodeRequestDefaultTypeInternal _CreatePromoCodeRequest_default_instance_;
@@ -68,6 +74,8 @@ struct UpdatePromoCodeRequestDefaultTypeInternal;
 extern UpdatePromoCodeRequestDefaultTypeInternal _UpdatePromoCodeRequest_default_instance_;
 }  // namespace promo
 PROTOBUF_NAMESPACE_OPEN
+template<> ::promo::ClickPromoCodeRequest* Arena::CreateMaybeMessage<::promo::ClickPromoCodeRequest>(Arena*);
+template<> ::promo::CommentPromoCodeRequest* Arena::CreateMaybeMessage<::promo::CommentPromoCodeRequest>(Arena*);
 template<> ::promo::CreatePromoCodeRequest* Arena::CreateMaybeMessage<::promo::CreatePromoCodeRequest>(Arena*);
 template<> ::promo::DeletePromoCodeRequest* Arena::CreateMaybeMessage<::promo::DeletePromoCodeRequest>(Arena*);
 template<> ::promo::GetPromoCodeRequest* Arena::CreateMaybeMessage<::promo::GetPromoCodeRequest>(Arena*);
@@ -1421,6 +1429,372 @@ class ListPromoCodesResponse final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_promo_2eproto;
 };
+// -------------------------------------------------------------------
+
+class ClickPromoCodeRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:promo.ClickPromoCodeRequest) */ {
+ public:
+  inline ClickPromoCodeRequest() : ClickPromoCodeRequest(nullptr) {}
+  ~ClickPromoCodeRequest() override;
+  explicit PROTOBUF_CONSTEXPR ClickPromoCodeRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ClickPromoCodeRequest(const ClickPromoCodeRequest& from);
+  ClickPromoCodeRequest(ClickPromoCodeRequest&& from) noexcept
+    : ClickPromoCodeRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline ClickPromoCodeRequest& operator=(const ClickPromoCodeRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ClickPromoCodeRequest& operator=(ClickPromoCodeRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ClickPromoCodeRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ClickPromoCodeRequest* internal_default_instance() {
+    return reinterpret_cast<const ClickPromoCodeRequest*>(
+               &_ClickPromoCodeRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  friend void swap(ClickPromoCodeRequest& a, ClickPromoCodeRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ClickPromoCodeRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ClickPromoCodeRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ClickPromoCodeRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ClickPromoCodeRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ClickPromoCodeRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const ClickPromoCodeRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ClickPromoCodeRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "promo.ClickPromoCodeRequest";
+  }
+  protected:
+  explicit ClickPromoCodeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTokenFieldNumber = 1,
+    kUserIdFieldNumber = 3,
+    kPromoIdFieldNumber = 2,
+  };
+  // string token = 1;
+  void clear_token();
+  const std::string& token() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_token(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_token();
+  PROTOBUF_NODISCARD std::string* release_token();
+  void set_allocated_token(std::string* token);
+  private:
+  const std::string& _internal_token() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_token(const std::string& value);
+  std::string* _internal_mutable_token();
+  public:
+
+  // string user_id = 3;
+  void clear_user_id();
+  const std::string& user_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user_id();
+  PROTOBUF_NODISCARD std::string* release_user_id();
+  void set_allocated_user_id(std::string* user_id);
+  private:
+  const std::string& _internal_user_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_id(const std::string& value);
+  std::string* _internal_mutable_user_id();
+  public:
+
+  // int64 promo_id = 2;
+  void clear_promo_id();
+  int64_t promo_id() const;
+  void set_promo_id(int64_t value);
+  private:
+  int64_t _internal_promo_id() const;
+  void _internal_set_promo_id(int64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:promo.ClickPromoCodeRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr token_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
+  int64_t promo_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_promo_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CommentPromoCodeRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:promo.CommentPromoCodeRequest) */ {
+ public:
+  inline CommentPromoCodeRequest() : CommentPromoCodeRequest(nullptr) {}
+  ~CommentPromoCodeRequest() override;
+  explicit PROTOBUF_CONSTEXPR CommentPromoCodeRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CommentPromoCodeRequest(const CommentPromoCodeRequest& from);
+  CommentPromoCodeRequest(CommentPromoCodeRequest&& from) noexcept
+    : CommentPromoCodeRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline CommentPromoCodeRequest& operator=(const CommentPromoCodeRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CommentPromoCodeRequest& operator=(CommentPromoCodeRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CommentPromoCodeRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CommentPromoCodeRequest* internal_default_instance() {
+    return reinterpret_cast<const CommentPromoCodeRequest*>(
+               &_CommentPromoCodeRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  friend void swap(CommentPromoCodeRequest& a, CommentPromoCodeRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CommentPromoCodeRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CommentPromoCodeRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CommentPromoCodeRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CommentPromoCodeRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CommentPromoCodeRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const CommentPromoCodeRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CommentPromoCodeRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "promo.CommentPromoCodeRequest";
+  }
+  protected:
+  explicit CommentPromoCodeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTokenFieldNumber = 1,
+    kUserIdFieldNumber = 3,
+    kCommentFieldNumber = 4,
+    kPromoIdFieldNumber = 2,
+  };
+  // string token = 1;
+  void clear_token();
+  const std::string& token() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_token(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_token();
+  PROTOBUF_NODISCARD std::string* release_token();
+  void set_allocated_token(std::string* token);
+  private:
+  const std::string& _internal_token() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_token(const std::string& value);
+  std::string* _internal_mutable_token();
+  public:
+
+  // string user_id = 3;
+  void clear_user_id();
+  const std::string& user_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user_id();
+  PROTOBUF_NODISCARD std::string* release_user_id();
+  void set_allocated_user_id(std::string* user_id);
+  private:
+  const std::string& _internal_user_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_id(const std::string& value);
+  std::string* _internal_mutable_user_id();
+  public:
+
+  // string comment = 4;
+  void clear_comment();
+  const std::string& comment() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_comment(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_comment();
+  PROTOBUF_NODISCARD std::string* release_comment();
+  void set_allocated_comment(std::string* comment);
+  private:
+  const std::string& _internal_comment() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_comment(const std::string& value);
+  std::string* _internal_mutable_comment();
+  public:
+
+  // int64 promo_id = 2;
+  void clear_promo_id();
+  int64_t promo_id() const;
+  void set_promo_id(int64_t value);
+  private:
+  int64_t _internal_promo_id() const;
+  void _internal_set_promo_id(int64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:promo.CommentPromoCodeRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr token_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr comment_;
+  int64_t promo_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_promo_2eproto;
+};
 // ===================================================================
 
 
@@ -2556,9 +2930,311 @@ inline void ListPromoCodesResponse::set_page_size(int32_t value) {
   // @@protoc_insertion_point(field_set:promo.ListPromoCodesResponse.page_size)
 }
 
+// -------------------------------------------------------------------
+
+// ClickPromoCodeRequest
+
+// string token = 1;
+inline void ClickPromoCodeRequest::clear_token() {
+  token_.ClearToEmpty();
+}
+inline const std::string& ClickPromoCodeRequest::token() const {
+  // @@protoc_insertion_point(field_get:promo.ClickPromoCodeRequest.token)
+  return _internal_token();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ClickPromoCodeRequest::set_token(ArgT0&& arg0, ArgT... args) {
+ 
+ token_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:promo.ClickPromoCodeRequest.token)
+}
+inline std::string* ClickPromoCodeRequest::mutable_token() {
+  std::string* _s = _internal_mutable_token();
+  // @@protoc_insertion_point(field_mutable:promo.ClickPromoCodeRequest.token)
+  return _s;
+}
+inline const std::string& ClickPromoCodeRequest::_internal_token() const {
+  return token_.Get();
+}
+inline void ClickPromoCodeRequest::_internal_set_token(const std::string& value) {
+  
+  token_.Set(value, GetArenaForAllocation());
+}
+inline std::string* ClickPromoCodeRequest::_internal_mutable_token() {
+  
+  return token_.Mutable(GetArenaForAllocation());
+}
+inline std::string* ClickPromoCodeRequest::release_token() {
+  // @@protoc_insertion_point(field_release:promo.ClickPromoCodeRequest.token)
+  return token_.Release();
+}
+inline void ClickPromoCodeRequest::set_allocated_token(std::string* token) {
+  if (token != nullptr) {
+    
+  } else {
+    
+  }
+  token_.SetAllocated(token, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (token_.IsDefault()) {
+    token_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:promo.ClickPromoCodeRequest.token)
+}
+
+// int64 promo_id = 2;
+inline void ClickPromoCodeRequest::clear_promo_id() {
+  promo_id_ = int64_t{0};
+}
+inline int64_t ClickPromoCodeRequest::_internal_promo_id() const {
+  return promo_id_;
+}
+inline int64_t ClickPromoCodeRequest::promo_id() const {
+  // @@protoc_insertion_point(field_get:promo.ClickPromoCodeRequest.promo_id)
+  return _internal_promo_id();
+}
+inline void ClickPromoCodeRequest::_internal_set_promo_id(int64_t value) {
+  
+  promo_id_ = value;
+}
+inline void ClickPromoCodeRequest::set_promo_id(int64_t value) {
+  _internal_set_promo_id(value);
+  // @@protoc_insertion_point(field_set:promo.ClickPromoCodeRequest.promo_id)
+}
+
+// string user_id = 3;
+inline void ClickPromoCodeRequest::clear_user_id() {
+  user_id_.ClearToEmpty();
+}
+inline const std::string& ClickPromoCodeRequest::user_id() const {
+  // @@protoc_insertion_point(field_get:promo.ClickPromoCodeRequest.user_id)
+  return _internal_user_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ClickPromoCodeRequest::set_user_id(ArgT0&& arg0, ArgT... args) {
+ 
+ user_id_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:promo.ClickPromoCodeRequest.user_id)
+}
+inline std::string* ClickPromoCodeRequest::mutable_user_id() {
+  std::string* _s = _internal_mutable_user_id();
+  // @@protoc_insertion_point(field_mutable:promo.ClickPromoCodeRequest.user_id)
+  return _s;
+}
+inline const std::string& ClickPromoCodeRequest::_internal_user_id() const {
+  return user_id_.Get();
+}
+inline void ClickPromoCodeRequest::_internal_set_user_id(const std::string& value) {
+  
+  user_id_.Set(value, GetArenaForAllocation());
+}
+inline std::string* ClickPromoCodeRequest::_internal_mutable_user_id() {
+  
+  return user_id_.Mutable(GetArenaForAllocation());
+}
+inline std::string* ClickPromoCodeRequest::release_user_id() {
+  // @@protoc_insertion_point(field_release:promo.ClickPromoCodeRequest.user_id)
+  return user_id_.Release();
+}
+inline void ClickPromoCodeRequest::set_allocated_user_id(std::string* user_id) {
+  if (user_id != nullptr) {
+    
+  } else {
+    
+  }
+  user_id_.SetAllocated(user_id, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (user_id_.IsDefault()) {
+    user_id_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:promo.ClickPromoCodeRequest.user_id)
+}
+
+// -------------------------------------------------------------------
+
+// CommentPromoCodeRequest
+
+// string token = 1;
+inline void CommentPromoCodeRequest::clear_token() {
+  token_.ClearToEmpty();
+}
+inline const std::string& CommentPromoCodeRequest::token() const {
+  // @@protoc_insertion_point(field_get:promo.CommentPromoCodeRequest.token)
+  return _internal_token();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CommentPromoCodeRequest::set_token(ArgT0&& arg0, ArgT... args) {
+ 
+ token_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:promo.CommentPromoCodeRequest.token)
+}
+inline std::string* CommentPromoCodeRequest::mutable_token() {
+  std::string* _s = _internal_mutable_token();
+  // @@protoc_insertion_point(field_mutable:promo.CommentPromoCodeRequest.token)
+  return _s;
+}
+inline const std::string& CommentPromoCodeRequest::_internal_token() const {
+  return token_.Get();
+}
+inline void CommentPromoCodeRequest::_internal_set_token(const std::string& value) {
+  
+  token_.Set(value, GetArenaForAllocation());
+}
+inline std::string* CommentPromoCodeRequest::_internal_mutable_token() {
+  
+  return token_.Mutable(GetArenaForAllocation());
+}
+inline std::string* CommentPromoCodeRequest::release_token() {
+  // @@protoc_insertion_point(field_release:promo.CommentPromoCodeRequest.token)
+  return token_.Release();
+}
+inline void CommentPromoCodeRequest::set_allocated_token(std::string* token) {
+  if (token != nullptr) {
+    
+  } else {
+    
+  }
+  token_.SetAllocated(token, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (token_.IsDefault()) {
+    token_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:promo.CommentPromoCodeRequest.token)
+}
+
+// int64 promo_id = 2;
+inline void CommentPromoCodeRequest::clear_promo_id() {
+  promo_id_ = int64_t{0};
+}
+inline int64_t CommentPromoCodeRequest::_internal_promo_id() const {
+  return promo_id_;
+}
+inline int64_t CommentPromoCodeRequest::promo_id() const {
+  // @@protoc_insertion_point(field_get:promo.CommentPromoCodeRequest.promo_id)
+  return _internal_promo_id();
+}
+inline void CommentPromoCodeRequest::_internal_set_promo_id(int64_t value) {
+  
+  promo_id_ = value;
+}
+inline void CommentPromoCodeRequest::set_promo_id(int64_t value) {
+  _internal_set_promo_id(value);
+  // @@protoc_insertion_point(field_set:promo.CommentPromoCodeRequest.promo_id)
+}
+
+// string user_id = 3;
+inline void CommentPromoCodeRequest::clear_user_id() {
+  user_id_.ClearToEmpty();
+}
+inline const std::string& CommentPromoCodeRequest::user_id() const {
+  // @@protoc_insertion_point(field_get:promo.CommentPromoCodeRequest.user_id)
+  return _internal_user_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CommentPromoCodeRequest::set_user_id(ArgT0&& arg0, ArgT... args) {
+ 
+ user_id_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:promo.CommentPromoCodeRequest.user_id)
+}
+inline std::string* CommentPromoCodeRequest::mutable_user_id() {
+  std::string* _s = _internal_mutable_user_id();
+  // @@protoc_insertion_point(field_mutable:promo.CommentPromoCodeRequest.user_id)
+  return _s;
+}
+inline const std::string& CommentPromoCodeRequest::_internal_user_id() const {
+  return user_id_.Get();
+}
+inline void CommentPromoCodeRequest::_internal_set_user_id(const std::string& value) {
+  
+  user_id_.Set(value, GetArenaForAllocation());
+}
+inline std::string* CommentPromoCodeRequest::_internal_mutable_user_id() {
+  
+  return user_id_.Mutable(GetArenaForAllocation());
+}
+inline std::string* CommentPromoCodeRequest::release_user_id() {
+  // @@protoc_insertion_point(field_release:promo.CommentPromoCodeRequest.user_id)
+  return user_id_.Release();
+}
+inline void CommentPromoCodeRequest::set_allocated_user_id(std::string* user_id) {
+  if (user_id != nullptr) {
+    
+  } else {
+    
+  }
+  user_id_.SetAllocated(user_id, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (user_id_.IsDefault()) {
+    user_id_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:promo.CommentPromoCodeRequest.user_id)
+}
+
+// string comment = 4;
+inline void CommentPromoCodeRequest::clear_comment() {
+  comment_.ClearToEmpty();
+}
+inline const std::string& CommentPromoCodeRequest::comment() const {
+  // @@protoc_insertion_point(field_get:promo.CommentPromoCodeRequest.comment)
+  return _internal_comment();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CommentPromoCodeRequest::set_comment(ArgT0&& arg0, ArgT... args) {
+ 
+ comment_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:promo.CommentPromoCodeRequest.comment)
+}
+inline std::string* CommentPromoCodeRequest::mutable_comment() {
+  std::string* _s = _internal_mutable_comment();
+  // @@protoc_insertion_point(field_mutable:promo.CommentPromoCodeRequest.comment)
+  return _s;
+}
+inline const std::string& CommentPromoCodeRequest::_internal_comment() const {
+  return comment_.Get();
+}
+inline void CommentPromoCodeRequest::_internal_set_comment(const std::string& value) {
+  
+  comment_.Set(value, GetArenaForAllocation());
+}
+inline std::string* CommentPromoCodeRequest::_internal_mutable_comment() {
+  
+  return comment_.Mutable(GetArenaForAllocation());
+}
+inline std::string* CommentPromoCodeRequest::release_comment() {
+  // @@protoc_insertion_point(field_release:promo.CommentPromoCodeRequest.comment)
+  return comment_.Release();
+}
+inline void CommentPromoCodeRequest::set_allocated_comment(std::string* comment) {
+  if (comment != nullptr) {
+    
+  } else {
+    
+  }
+  comment_.SetAllocated(comment, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (comment_.IsDefault()) {
+    comment_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:promo.CommentPromoCodeRequest.comment)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

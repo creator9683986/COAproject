@@ -435,4 +435,6 @@ CMakeFiles/gateway.dir/src/PromoServiceProxyImpl.cpp.o: \
  /usr/include/grpcpp/impl/codegen/serialization_traits.h \
  /usr/include/grpcpp/support/stub_options.h \
  /home/timsus/projects/COAproject/gateway/../proto/generated/auth.grpc.pb.h \
- /home/timsus/projects/COAproject/gateway/../proto/generated/auth.pb.h
+ /home/timsus/projects/COAproject/gateway/../proto/generated/auth.pb.h \
+ /home/timsus/projects/COAproject/gateway/src/KafkaProducer.h \
+ /usr/include/librdkafka/rdkafkacpp.h

@@ -130,6 +130,30 @@ gatewaytest/fast:
 	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/build
 .PHONY : gatewaytest/fast
 
+KafkaConsumer.o: KafkaConsumer.cpp.o
+.PHONY : KafkaConsumer.o
+
+# target to build an object file
+KafkaConsumer.cpp.o:
+	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/KafkaConsumer.cpp.o
+.PHONY : KafkaConsumer.cpp.o
+
+KafkaConsumer.i: KafkaConsumer.cpp.i
+.PHONY : KafkaConsumer.i
+
+# target to preprocess a source file
+KafkaConsumer.cpp.i:
+	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/KafkaConsumer.cpp.i
+.PHONY : KafkaConsumer.cpp.i
+
+KafkaConsumer.s: KafkaConsumer.cpp.s
+.PHONY : KafkaConsumer.s
+
+# target to generate assembly for a file
+KafkaConsumer.cpp.s:
+	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/KafkaConsumer.cpp.s
+.PHONY : KafkaConsumer.cpp.s
+
 gatewaytest.o: gatewaytest.cpp.o
 .PHONY : gatewaytest.o
 
@@ -211,6 +235,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... gatewaytest"
+	@echo "... KafkaConsumer.o"
+	@echo "... KafkaConsumer.i"
+	@echo "... KafkaConsumer.s"
 	@echo "... gatewaytest.o"
 	@echo "... gatewaytest.i"
 	@echo "... gatewaytest.s"

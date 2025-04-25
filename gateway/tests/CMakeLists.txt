@@ -7,12 +7,17 @@ find_package(gRPC REQUIRED)
 find_package(Protobuf REQUIRED)
 find_package(GTest REQUIRED)
 
+include_directories(/usr/include/librdkafka)
+link_directories(/usr/lib/x86_64-linux-gnu)
+set(CMAKE_LIBRARY_PATH /usr/lib/x86_64-linux-gnu ${CMAKE_LIBRARY_PATH})
+
 include_directories(${CMAKE_SOURCE_DIR}/../proto/generated)
 
 set(GENERATED_DIR ${CMAKE_SOURCE_DIR}/../proto/generated)
 
 set(TEST_SOURCES
     gatewaytest.cpp
+    KafkaConsumer.cpp
     ${GENERATED_DIR}/auth.pb.cc
     ${GENERATED_DIR}/auth.grpc.pb.cc
 )
@@ -24,4 +29,6 @@ target_link_libraries(gatewaytest
     GTest::GTest
     GTest::Main
     Threads::Threads
+    rdkafka
+    rdkafka++ 
 )
