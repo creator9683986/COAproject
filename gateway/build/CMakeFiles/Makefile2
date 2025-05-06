@@ -124,12 +124,12 @@ CMakeFiles/gateway.dir/clean:
 tests/CMakeFiles/gatewaytest.dir/all:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/timsus/projects/COAproject/gateway/build/CMakeFiles --progress-num=11,12,13,14,15 "Built target gatewaytest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/timsus/projects/COAproject/gateway/build/CMakeFiles --progress-num=11,12,13,14,15,16,17,18,19,20 "Built target gatewaytest"
 .PHONY : tests/CMakeFiles/gatewaytest.dir/all
 
 # Build rule for subdir invocation for target.
 tests/CMakeFiles/gatewaytest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/timsus/projects/COAproject/gateway/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/timsus/projects/COAproject/gateway/build/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/gatewaytest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/timsus/projects/COAproject/gateway/build/CMakeFiles 0
 .PHONY : tests/CMakeFiles/gatewaytest.dir/rule

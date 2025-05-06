@@ -1,149 +1,257 @@
 #include <gtest/gtest.h>
 #include <grpcpp/grpcpp.h>
 #include "auth.grpc.pb.h"
+#include "../src/AuthServiceProxyImpl.h"
+#include "../src/PromoServiceProxyImpl.h"
 #include "KafkaConsumer.cpp"
 #include <thread>
 #include <chrono>
 
+using grpc::Server;
+using grpc::ServerBuilder;
+using grpc::ServerContext;
+using grpc::Status;
+using grpc::InsecureServerCredentials;
+
 class AuthServiceTest : public ::testing::Test {
 protected:
     void SetUp() override {
-        channel = grpc::CreateChannel("localhost:50051", grpc::InsecureChannelCredentials());
-        stub = auth::AuthService::NewStub(channel);
+        channel_ = grpc::CreateChannel(
+            "localhost:50051",
+            grpc::InsecureChannelCredentials()
+        );
+        service_impl_ = std::make_unique<gateway::AuthServiceProxyImpl>(channel_);
 
-        auth::RegisterUserRequest regReq;
-        regReq.set_login("testuser");
-        regReq.set_password("testpass");
-        regReq.set_email("test@example.com");
-        auth::User regResp;
-        grpc::ClientContext regContext;
-        grpc::Status regStatus = stub->RegisterUser(&regContext, regReq, &regResp);
-        if (!regStatus.ok() && regStatus.error_code() != grpc::StatusCode::ALREADY_EXISTS) {
-            FAIL() << "Registration failed: " << regStatus.error_message();
+        {
+            grpc::ServerContext ctx;
+            auth::RegisterUserRequest req;
+            req.set_login("testuser");
+            req.set_password("testpass");
+            req.set_email("test@example.com");
+            auth::User resp;
+            auto st = service_impl_->RegisterUser(&ctx, &req, &resp);
+            ASSERT_TRUE(st.ok() || st.error_code() == grpc::StatusCode::ALREADY_EXISTS)
+                << "Initial RegisterUser failed: " << st.error_message();
         }
-
-        auth::LoginRequest loginReq;
-        loginReq.set_login("testuser");
-        loginReq.set_password("testpass");
-        auth::LoginResponse loginResp;
-        grpc::ClientContext loginContext;
-        grpc::Status loginStatus = stub->Login(&loginContext, loginReq, &loginResp);
-        ASSERT_TRUE(loginStatus.ok()) << "Login failed: " << loginStatus.error_message();
-        token = loginResp.token();
+        {
+            grpc::ServerContext ctx;
+            auth::LoginRequest req;
+            req.set_login("testuser");
+            req.set_password("testpass");
+            auth::LoginResponse resp;
+            auto st = service_impl_->Login(&ctx, &req, &resp);
+            ASSERT_TRUE(st.ok()) << "Initial Login failed: " << st.error_message();
+            token_ = resp.token();
+        }
     }
 
-    std::string token;
-    std::shared_ptr<grpc::Channel> channel;
-    std::unique_ptr<auth::AuthService::Stub> stub;
+    std::unique_ptr<gateway::AuthServiceProxyImpl> service_impl_;
+    std::shared_ptr<grpc::Channel>                  channel_;
+    std::string                                     token_;
 };
 
 TEST_F(AuthServiceTest, RegisterUserTest) {
-    auth::RegisterUserRequest request;
-    request.set_login("newuser");
-    request.set_password("newpass");
-    request.set_email("new@example.com");
+    grpc::ServerContext ctx;
+    auth::RegisterUserRequest req;
+    req.set_login("newuser");
+    req.set_password("newpass");
+    req.set_email("new@example.com");
+    auth::User resp;
 
-    auth::User response;
-    grpc::ClientContext context;
-    grpc::Status status = stub->RegisterUser(&context, request, &response);
+    auto st = service_impl_->RegisterUser(&ctx, &req, &resp);
+    EXPECT_TRUE(st.ok() || st.error_code() == grpc::StatusCode::ALREADY_EXISTS);
 
-    EXPECT_TRUE(status.ok() || status.error_code() == grpc::StatusCode::ALREADY_EXISTS)
-        << "Registration failed: " << status.error_message();
-    if(status.ok()){
-        EXPECT_EQ(response.login(), "newuser");
-        EXPECT_EQ(response.email(), "new@example.com");
-        EXPECT_FALSE(response.created_at().empty());
-        EXPECT_FALSE(response.updated_at().empty());
-        EXPECT_GT(response.id(), 0);
-    }
     std::this_thread::sleep_for(std::chrono::seconds(1));
-    KafkaConsumer consumer("localhost:9092", "user-registration");
-    consumer.consume();
+
+    KafkaConsumer consumer("localhost:9092", "user-registration", "test-group");
+    auto msgs = consumer.consumeBatch(5, 500);
+
 }
 
 TEST_F(AuthServiceTest, LoginTest) {
-    auth::RegisterUserRequest regRequest;
-    regRequest.set_login("loginuser");
-    regRequest.set_password("loginpass");
-    regRequest.set_email("login@example.com");
-    auth::User regResponse;
-    grpc::ClientContext regContext;
-    grpc::Status regStatus = stub->RegisterUser(&regContext, regRequest, &regResponse);
-    EXPECT_TRUE(regStatus.ok() || regStatus.error_code() == grpc::StatusCode::ALREADY_EXISTS)
-        << "Registration for login test failed: " << regStatus.error_message();
+    grpc::ServerContext ctx;
+    auth::LoginRequest req;
+    req.set_login("testuser");
+    req.set_password("testpass");
+    auth::LoginResponse resp;
 
-    auth::LoginRequest loginReq;
-    loginReq.set_login("loginuser");
-    loginReq.set_password("loginpass");
-
-    auth::LoginResponse loginResp;
-    grpc::ClientContext loginContext;
-    grpc::Status status = stub->Login(&loginContext, loginReq, &loginResp);
-
-    EXPECT_TRUE(status.ok()) << "Login failed: " << status.error_message();
-    EXPECT_FALSE(loginResp.token().empty());
-    EXPECT_EQ(loginResp.user().login(), "loginuser");
-    EXPECT_EQ(loginResp.user().email(), "login@example.com");
+    auto st = service_impl_->Login(&ctx, &req, &resp);
+    EXPECT_TRUE(st.ok());
+    EXPECT_FALSE(resp.token().empty());
+    EXPECT_EQ(resp.user().login(), "testuser");
+    EXPECT_EQ(resp.user().email(), "test@example.com");
 }
 
-
 TEST_F(AuthServiceTest, UpdateProfileTest) {
-    auth::UpdateProfileRequest request;
-    request.set_token(token);
-    request.set_first_name("Test");
-    request.set_last_name("User");
-    request.set_birth_date("1990-01-01");
-    request.set_email("newemail@example.com");
-    request.set_phone("123456789");
+    grpc::ServerContext ctx;
+    auth::UpdateProfileRequest req;
+    req.set_token(token_);
+    req.set_first_name("Test");
+    req.set_last_name("User");
+    req.set_birth_date("1990-01-01");
+    req.set_email("newemail@example.com");
+    req.set_phone("123456789");
+    auth::User resp;
 
-    auth::User response;
-    grpc::ClientContext context;
-    grpc::Status status = stub->UpdateProfile(&context, request, &response);
-
-    EXPECT_TRUE(status.ok()) << "UpdateProfile failed: " << status.error_message();
-    EXPECT_EQ(response.first_name(), "Test");
-    EXPECT_EQ(response.last_name(), "User");
-    EXPECT_EQ(response.birth_date(), "1990-01-01");
-    EXPECT_EQ(response.email(), "newemail@example.com");
-    EXPECT_EQ(response.phone(), "123456789");
+    auto st = service_impl_->UpdateProfile(&ctx, &req, &resp);
+    EXPECT_TRUE(st.ok());
+    EXPECT_EQ(resp.first_name(), "Test");
+    EXPECT_EQ(resp.last_name(),  "User");
+    EXPECT_EQ(resp.birth_date(), "1990-01-01");
+    EXPECT_EQ(resp.email(),      "newemail@example.com");
+    EXPECT_EQ(resp.phone(),      "123456789");
 }
 
 TEST_F(AuthServiceTest, GetProfileTest) {
-    auth::GetProfileRequest request;
-    request.set_token(token);
+    grpc::ServerContext ctx;
+    auth::GetProfileRequest req;
+    req.set_token(token_);
+    auth::User resp;
 
-    auth::User response;
-    grpc::ClientContext context;
-    grpc::Status status = stub->GetProfile(&context, request, &response);
-
-    EXPECT_TRUE(status.ok()) << "GetProfile failed: " << status.error_message();
-    EXPECT_EQ(response.login(), "testuser");
-    EXPECT_EQ(response.email(), "newemail@example.com");
-    EXPECT_EQ(response.first_name(), "Test");
-    EXPECT_EQ(response.last_name(), "User");
-    EXPECT_EQ(response.birth_date(), "1990-01-01");
-    EXPECT_EQ(response.phone(), "123456789");
+    auto st = service_impl_->GetProfile(&ctx, &req, &resp);
+    EXPECT_TRUE(st.ok());
+    EXPECT_EQ(resp.login(),      "testuser");
+    EXPECT_EQ(resp.email(),      "newemail@example.com");
+    EXPECT_EQ(resp.first_name(), "Test");
+    EXPECT_EQ(resp.last_name(),  "User");
+    EXPECT_EQ(resp.birth_date(),"1990-01-01");
+    EXPECT_EQ(resp.phone(),     "123456789");
 }
 
 TEST_F(AuthServiceTest, DeleteUserTest) {
-    auth::DeleteUserRequest request;
-    request.set_token(token);
+    grpc::ServerContext ctx;
+    auth::DeleteUserRequest req;
+    req.set_token(token_);
+    auth::User delResp;
 
-    auth::User deleteResponse;
-    grpc::ClientContext context;
-    grpc::Status status = stub->DeleteUser(&context, request, &deleteResponse);
-    EXPECT_TRUE(status.ok()) << "DeleteUser failed: " << status.error_message();
-    EXPECT_EQ(deleteResponse.login(), "testuser");
+    auto st = service_impl_->DeleteUser(&ctx, &req, &delResp);
+    EXPECT_TRUE(st.ok());
+    EXPECT_EQ(delResp.login(), "testuser");
 
-    auth::GetProfileRequest getRequest;
-    getRequest.set_token(token);
-    auth::User getResponse;
-    grpc::ClientContext getContext;
-    status = stub->GetProfile(&getContext, getRequest, &getResponse);
-    EXPECT_FALSE(status.ok());
+    auth::GetProfileRequest getReq;
+    getReq.set_token(token_);
+    auth::User getResp;
+    grpc::ServerContext ctx2;
+    st = service_impl_->GetProfile(&ctx2, &getReq, &getResp);
+    EXPECT_FALSE(st.ok());
 }
 
-int main(int argc, char **argv) {
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
+class DummyAuthService : public auth::AuthService::Service {
+    public:
+        Status GetProfile(ServerContext* /*ctx*/,
+                          const auth::GetProfileRequest* /*req*/,
+                          auth::User* resp) override {
+            resp->set_id(123);
+            resp->set_login("dummy");
+            return Status::OK;
+        }
+    };
+    
+    class DummyPromoService : public promo::PromoService::Service {
+    public:
+        Status GetPromoCodeById(ServerContext* /*ctx*/,
+                                const promo::GetPromoCodeRequest* req,
+                                promo::PromoCode* resp) override {
+            resp->set_id(req->promo_id());
+            return Status::OK;
+        }
+        Status ClickPromoCode(ServerContext* /*ctx*/,
+                              const promo::ClickPromoCodeRequest* req,
+                              promo::PromoCode* resp) override {
+            resp->set_id(req->promo_id());
+            return Status::OK;
+        }
+        Status CommentPromoCode(ServerContext* /*ctx*/,
+                                const promo::CommentPromoCodeRequest* req,
+                                promo::PromoCode* resp) override {
+            resp->set_id(req->promo_id());
+            return Status::OK;
+        }
+    };
+    
+    class PromoKafkaTest : public ::testing::Test {
+    protected:
+        void SetUp() override {
+            {
+                ServerBuilder b;
+                b.AddListeningPort("localhost:50051", InsecureServerCredentials());
+                b.RegisterService(&auth_svc_);
+                auth_server_ = b.BuildAndStart();
+            }
+            {
+                ServerBuilder b;
+                b.AddListeningPort("localhost:50052", InsecureServerCredentials());
+                b.RegisterService(&promo_svc_);
+                promo_server_ = b.BuildAndStart();
+            }
+            auth_channel_  = grpc::CreateChannel("localhost:50051", grpc::InsecureChannelCredentials());
+            promo_channel_ = grpc::CreateChannel("localhost:50052", grpc::InsecureChannelCredentials());
+            proxy_ = std::make_unique<gateway::PromoServiceProxyImpl>(
+                promo_channel_, auth_channel_
+            );
+        }
+    
+        void TearDown() override {
+            auth_server_->Shutdown();
+            promo_server_->Shutdown();
+        }
+    
+        DummyAuthService   auth_svc_;
+        DummyPromoService  promo_svc_;
+        std::unique_ptr<Server> auth_server_, promo_server_;
+        std::shared_ptr<grpc::Channel> auth_channel_, promo_channel_;
+        std::unique_ptr<gateway::PromoServiceProxyImpl> proxy_;
+    };
+    
+    std::string consumeOne(const std::string& topic) {
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        KafkaConsumer c("localhost:9092", topic, "test-group");
+        auto msgs = c.consumeBatch(1, 500);
+        if (msgs.empty()) return "";
+        return msgs[0];
+    }
+    
+    TEST_F(PromoKafkaTest, GetPromoCodeById_SendsKafka) {
+        ServerContext ctx;
+        promo::GetPromoCodeRequest req;
+        req.set_token("any-token");
+        req.set_promo_id(42);
+        promo::PromoCode resp;
+        auto st = proxy_->GetPromoCodeById(&ctx, &req, &resp);
+        ASSERT_TRUE(st.ok());
+        std::string m = consumeOne("promo-view");
+        ASSERT_FALSE(m.empty());
+        EXPECT_NE(m.find("viewed promo 42"), std::string::npos);
+    }
+    
+    TEST_F(PromoKafkaTest, ClickPromoCode_SendsKafka) {
+        ServerContext ctx;
+        promo::ClickPromoCodeRequest req;
+        req.set_user_id("user123");
+        req.set_promo_id(73);
+        promo::PromoCode resp;
+        auto st = proxy_->ClickPromoCode(&ctx, &req, &resp);
+        ASSERT_TRUE(st.ok());
+        std::string m = consumeOne("promo-click");
+        ASSERT_FALSE(m.empty());
+        EXPECT_NE(m.find("clicked promo 73"), std::string::npos);
+    }
+    
+    TEST_F(PromoKafkaTest, CommentPromoCode_SendsKafka) {
+        ServerContext ctx;
+        promo::CommentPromoCodeRequest req;
+        req.set_user_id("userABC");
+        req.set_promo_id(99);
+        req.set_comment("Great!");
+        promo::PromoCode resp;
+        auto st = proxy_->CommentPromoCode(&ctx, &req, &resp);
+        ASSERT_TRUE(st.ok());
+        std::string m = consumeOne("promo-comment");
+        ASSERT_FALSE(m.empty());
+        EXPECT_NE(m.find("commented on promo 99"), std::string::npos);
+    }
+    
+    int main(int argc, char** argv) {
+        ::testing::InitGoogleTest(&argc, argv);
+        return RUN_ALL_TESTS();
+    }

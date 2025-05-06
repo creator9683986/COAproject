@@ -29,11 +29,21 @@
       "problemMatcher": []
     },
     {
+      "label": "Build Stat service",
+      "type": "shell",
+      "command": "mkdir -p build && cd build && cmake .. && make",
+      "options": {
+        "cwd": "${workspaceFolder}/statmanager"
+      },
+      "problemMatcher": []
+    },
+    {
       "label": "Build All",
       "dependsOn": [
         "Build Auth Service",
         "Build API Gateway",
-        "Build Promo service"
+        "Build Promo service",
+        "Build Stat service"
       ],
       "problemMatcher": [],
       "group": {

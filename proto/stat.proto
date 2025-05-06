@@ -1,0 +1,15 @@
+syntax = "proto3";
+package stat;
+
+service CommentsService {
+  rpc ListComments(PaginationRequest) returns (ListCommentsResponse);
+}
+
+message PaginationRequest {
+  int32 page_size   = 1;
+  int32 page_number = 2;
+}
+
+message ListCommentsResponse {
+  repeated string comments = 1;
+}

@@ -505,7 +505,12 @@ tests/CMakeFiles/gatewaytest.dir/gatewaytest.cpp.o: \
  /usr/include/grpcpp/support/proto_buffer_writer.h \
  /usr/include/grpcpp/impl/codegen/serialization_traits.h \
  /usr/include/grpcpp/support/stub_options.h \
+ /home/timsus/projects/COAproject/gateway/tests/../src/AuthServiceProxyImpl.h \
+ /home/timsus/projects/COAproject/gateway/tests/../src/PromoServiceProxyImpl.h \
+ /home/timsus/projects/COAproject/gateway/../proto/generated/promo.grpc.pb.h \
+ /home/timsus/projects/COAproject/gateway/../proto/generated/promo.pb.h \
+ /home/timsus/projects/COAproject/gateway/tests/../src/KafkaProducer.h \
+ /usr/include/librdkafka/rdkafkacpp.h \
  /home/timsus/projects/COAproject/gateway/tests/KafkaConsumer.cpp \
- /usr/include/librdkafka/rdkafkacpp.h /usr/include/c++/13/thread \
- /usr/include/c++/13/bits/std_thread.h \
+ /usr/include/c++/13/thread /usr/include/c++/13/bits/std_thread.h \
  /usr/include/c++/13/bits/this_thread_sleep.h

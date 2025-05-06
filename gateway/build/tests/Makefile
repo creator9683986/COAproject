@@ -154,6 +154,78 @@ KafkaConsumer.cpp.s:
 	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/KafkaConsumer.cpp.s
 .PHONY : KafkaConsumer.cpp.s
 
+__/src/AuthServiceProxyImpl.o: __/src/AuthServiceProxyImpl.cpp.o
+.PHONY : __/src/AuthServiceProxyImpl.o
+
+# target to build an object file
+__/src/AuthServiceProxyImpl.cpp.o:
+	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/__/src/AuthServiceProxyImpl.cpp.o
+.PHONY : __/src/AuthServiceProxyImpl.cpp.o
+
+__/src/AuthServiceProxyImpl.i: __/src/AuthServiceProxyImpl.cpp.i
+.PHONY : __/src/AuthServiceProxyImpl.i
+
+# target to preprocess a source file
+__/src/AuthServiceProxyImpl.cpp.i:
+	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/__/src/AuthServiceProxyImpl.cpp.i
+.PHONY : __/src/AuthServiceProxyImpl.cpp.i
+
+__/src/AuthServiceProxyImpl.s: __/src/AuthServiceProxyImpl.cpp.s
+.PHONY : __/src/AuthServiceProxyImpl.s
+
+# target to generate assembly for a file
+__/src/AuthServiceProxyImpl.cpp.s:
+	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/__/src/AuthServiceProxyImpl.cpp.s
+.PHONY : __/src/AuthServiceProxyImpl.cpp.s
+
+__/src/KafkaProducer.o: __/src/KafkaProducer.cpp.o
+.PHONY : __/src/KafkaProducer.o
+
+# target to build an object file
+__/src/KafkaProducer.cpp.o:
+	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/__/src/KafkaProducer.cpp.o
+.PHONY : __/src/KafkaProducer.cpp.o
+
+__/src/KafkaProducer.i: __/src/KafkaProducer.cpp.i
+.PHONY : __/src/KafkaProducer.i
+
+# target to preprocess a source file
+__/src/KafkaProducer.cpp.i:
+	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/__/src/KafkaProducer.cpp.i
+.PHONY : __/src/KafkaProducer.cpp.i
+
+__/src/KafkaProducer.s: __/src/KafkaProducer.cpp.s
+.PHONY : __/src/KafkaProducer.s
+
+# target to generate assembly for a file
+__/src/KafkaProducer.cpp.s:
+	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/__/src/KafkaProducer.cpp.s
+.PHONY : __/src/KafkaProducer.cpp.s
+
+__/src/PromoServiceProxyImpl.o: __/src/PromoServiceProxyImpl.cpp.o
+.PHONY : __/src/PromoServiceProxyImpl.o
+
+# target to build an object file
+__/src/PromoServiceProxyImpl.cpp.o:
+	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/__/src/PromoServiceProxyImpl.cpp.o
+.PHONY : __/src/PromoServiceProxyImpl.cpp.o
+
+__/src/PromoServiceProxyImpl.i: __/src/PromoServiceProxyImpl.cpp.i
+.PHONY : __/src/PromoServiceProxyImpl.i
+
+# target to preprocess a source file
+__/src/PromoServiceProxyImpl.cpp.i:
+	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/__/src/PromoServiceProxyImpl.cpp.i
+.PHONY : __/src/PromoServiceProxyImpl.cpp.i
+
+__/src/PromoServiceProxyImpl.s: __/src/PromoServiceProxyImpl.cpp.s
+.PHONY : __/src/PromoServiceProxyImpl.s
+
+# target to generate assembly for a file
+__/src/PromoServiceProxyImpl.cpp.s:
+	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/__/src/PromoServiceProxyImpl.cpp.s
+.PHONY : __/src/PromoServiceProxyImpl.cpp.s
+
 gatewaytest.o: gatewaytest.cpp.o
 .PHONY : gatewaytest.o
 
@@ -226,6 +298,54 @@ home/timsus/projects/COAproject/proto/generated/auth.pb.cc.s:
 	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/home/timsus/projects/COAproject/proto/generated/auth.pb.cc.s
 .PHONY : home/timsus/projects/COAproject/proto/generated/auth.pb.cc.s
 
+home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.o: home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.o
+.PHONY : home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.o
+
+# target to build an object file
+home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.o:
+	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.o
+.PHONY : home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.o
+
+home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.i: home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.i
+.PHONY : home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.i
+
+# target to preprocess a source file
+home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.i:
+	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.i
+.PHONY : home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.i
+
+home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.s: home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.s
+.PHONY : home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.s
+
+# target to generate assembly for a file
+home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.s:
+	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.s
+.PHONY : home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.s
+
+home/timsus/projects/COAproject/proto/generated/promo.pb.o: home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o
+.PHONY : home/timsus/projects/COAproject/proto/generated/promo.pb.o
+
+# target to build an object file
+home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o:
+	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o
+.PHONY : home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o
+
+home/timsus/projects/COAproject/proto/generated/promo.pb.i: home/timsus/projects/COAproject/proto/generated/promo.pb.cc.i
+.PHONY : home/timsus/projects/COAproject/proto/generated/promo.pb.i
+
+# target to preprocess a source file
+home/timsus/projects/COAproject/proto/generated/promo.pb.cc.i:
+	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.i
+.PHONY : home/timsus/projects/COAproject/proto/generated/promo.pb.cc.i
+
+home/timsus/projects/COAproject/proto/generated/promo.pb.s: home/timsus/projects/COAproject/proto/generated/promo.pb.cc.s
+.PHONY : home/timsus/projects/COAproject/proto/generated/promo.pb.s
+
+# target to generate assembly for a file
+home/timsus/projects/COAproject/proto/generated/promo.pb.cc.s:
+	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.s
+.PHONY : home/timsus/projects/COAproject/proto/generated/promo.pb.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -238,6 +358,15 @@ help:
 	@echo "... KafkaConsumer.o"
 	@echo "... KafkaConsumer.i"
 	@echo "... KafkaConsumer.s"
+	@echo "... __/src/AuthServiceProxyImpl.o"
+	@echo "... __/src/AuthServiceProxyImpl.i"
+	@echo "... __/src/AuthServiceProxyImpl.s"
+	@echo "... __/src/KafkaProducer.o"
+	@echo "... __/src/KafkaProducer.i"
+	@echo "... __/src/KafkaProducer.s"
+	@echo "... __/src/PromoServiceProxyImpl.o"
+	@echo "... __/src/PromoServiceProxyImpl.i"
+	@echo "... __/src/PromoServiceProxyImpl.s"
 	@echo "... gatewaytest.o"
 	@echo "... gatewaytest.i"
 	@echo "... gatewaytest.s"
@@ -247,6 +376,12 @@ help:
 	@echo "... home/timsus/projects/COAproject/proto/generated/auth.pb.o"
 	@echo "... home/timsus/projects/COAproject/proto/generated/auth.pb.i"
 	@echo "... home/timsus/projects/COAproject/proto/generated/auth.pb.s"
+	@echo "... home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.o"
+	@echo "... home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.i"
+	@echo "... home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.s"
+	@echo "... home/timsus/projects/COAproject/proto/generated/promo.pb.o"
+	@echo "... home/timsus/projects/COAproject/proto/generated/promo.pb.i"
+	@echo "... home/timsus/projects/COAproject/proto/generated/promo.pb.s"
 .PHONY : help
 
 

@@ -63,9 +63,15 @@ grpc::Status PromoServiceProxyImpl::GetPromoCodeById(grpc::ServerContext* contex
     grpc::ClientContext client_context;
     grpc::Status status = promo_stub_->GetPromoCodeById(&client_context, *request, response);
     if (status.ok()) {
-        KafkaProducer kafkaProducer("localhost:9092", "promo-view");
-        std::string message = "User " + request->token() + " viewed promo " + std::to_string(request->promo_id()) + " at " + std::to_string(time(nullptr));
-        kafkaProducer.SendMessage(message);
+        KafkaProducer producer("localhost:9092", "promo-view");
+        std::string payload = 
+            "User " + request->token() + 
+            " viewed promo " + std::to_string(request->promo_id()) + " at " + std::to_string(time(nullptr));
+        std::cout << "Sending message: " << payload << std::endl;
+    
+        if (!producer.sendMessage( "", payload)) {
+            std::cerr << "Kafka send failed" << std::endl;
+        }
     }
 
     return status;
@@ -88,9 +94,15 @@ grpc::Status PromoServiceProxyImpl::ClickPromoCode(grpc::ServerContext* context,
     grpc::Status status = promo_stub_->ClickPromoCode(&client_context, *request, response);
 
     if (status.ok()) {
-        KafkaProducer kafkaProducer("localhost:9092", "promo-click");
-        std::string message = "User " + request->user_id() + " clicked promo " + std::to_string(request->promo_id()) + " at " + std::to_string(time(nullptr));
-        kafkaProducer.SendMessage(message);
+        KafkaProducer producer("localhost:9092", "promo-click");
+        std::string payload = 
+            "User " + request->user_id() + " clicked promo " + std::to_string(request->promo_id()) + " at " + std::to_string(time(nullptr));
+        std::cout << "Sending message: " << payload << std::endl;
+    
+        if (!producer.sendMessage( "", payload)) {
+            std::cerr << "Kafka send failed" << std::endl;
+        }
+
     }
 
     return status;
@@ -102,9 +114,14 @@ grpc::Status PromoServiceProxyImpl::CommentPromoCode(grpc::ServerContext* contex
     grpc::Status status = promo_stub_->CommentPromoCode(&client_context, *request, response);
 
     if (status.ok()) {
-        KafkaProducer kafkaProducer("localhost:9092", "promo-comment");
-        std::string message = "User " + request->user_id() + " commented on promo " + std::to_string(request->promo_id()) + ": " + request->comment() + " at " + std::to_string(time(nullptr));
-        kafkaProducer.SendMessage(message);
+        KafkaProducer producer("localhost:9092", "promo-comment");
+        std::string payload = 
+            "User " + request->user_id() + " commented on promo " + std::to_string(request->promo_id()) + ": " + request->comment() + " at " + std::to_string(time(nullptr));
+        std::cout << "Sending message: " << payload << std::endl;
+    
+        if (!producer.sendMessage( "", payload)) {
+            std::cerr << "Kafka send failed" << std::endl;
+        }
     }
 
     return status;

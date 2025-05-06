@@ -1,0 +1,3 @@
+/home/timsus/projects/COAproject/statmanager/build/CMakeFiles/statservice.dir
+/home/timsus/projects/COAproject/statmanager/build/CMakeFiles/edit_cache.dir
+/home/timsus/projects/COAproject/statmanager/build/CMakeFiles/rebuild_cache.dir
