@@ -47,26 +47,26 @@ key.empty()? nullptr : key.data(),
 key.empty()? 0 : key.size(),
 nullptr
 );
-std::cerr << "[KafkaProducer] about to produce message: " << value << std::endl;
+// std::cerr << "[KafkaProducer] about to produce message: " << value << std::endl;
 
 if (rc != RdKafka::ERR_NO_ERROR) {
-std::cerr << "[KafkaProducer] produce() failed: "
-<< RdKafka::err2str(rc) << std::endl;
+// std::cerr << "[KafkaProducer] produce() failed: "
+// << RdKafka::err2str(rc) << std::endl;
 return false;
 }
 
 producer_->poll(poll_timeout_ms_);
 
 RdKafka::ErrorCode f = producer_->flush(5000);
-std::cerr << "[KafkaProducer] flush returned: " << RdKafka::err2str(f) << std::endl;
+// std::cerr << "[KafkaProducer] flush returned: " << RdKafka::err2str(f) << std::endl;
 
 if (f != RdKafka::ERR_NO_ERROR) {
-std::cerr << "[KafkaProducer] flush() failed: "
-<< RdKafka::err2str(f) << std::endl;
+// std::cerr << "[KafkaProducer] flush() failed: "
+// << RdKafka::err2str(f) << std::endl;
 return false;
 }
 
-std::cout << "[KafkaProducer] message flushed to broker\n";
+// std::cout << "[KafkaProducer] message flushed to broker\n";
 return true;
 }
 

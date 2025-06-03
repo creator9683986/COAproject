@@ -18,6 +18,7 @@ protected:
     PromoServiceImpl* service_impl;
 };
 
+/// Test promo
 TEST_F(PromoServiceUnitTest, CreateAndGetPromoCodeDirectCall) {
     grpc::ServerContext context;
 
@@ -45,6 +46,7 @@ TEST_F(PromoServiceUnitTest, CreateAndGetPromoCodeDirectCall) {
     EXPECT_EQ(get_resp.title(), "Test Promo");
 }
 
+/// Test Promo 
 TEST_F(PromoServiceUnitTest, ListPromoCodesDirectCall) {
     grpc::ServerContext context;
 
@@ -74,6 +76,7 @@ TEST_F(PromoServiceUnitTest, ListPromoCodesDirectCall) {
     EXPECT_GE(list_resp.promo_codes_size(), promoCount);
 }
 
+/// Test promo  
 TEST_F(PromoServiceUnitTest, UpdatePromoCodeDirectCall) {
     grpc::ServerContext context;
     

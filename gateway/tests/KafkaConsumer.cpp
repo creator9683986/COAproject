@@ -42,12 +42,14 @@ class KafkaConsumer {
                             std::string(reinterpret_cast<const char*>(msg->payload()),
                                         msg->len())
                         );
+                        std::cerr << out[1];
                         break;
                     default:
                         std::cerr << "Consume error: " << msg->errstr() << std::endl;
                         return out;
                 }
             }
+            
             return out;
         }
     

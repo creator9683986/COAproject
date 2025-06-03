@@ -1459,8 +1459,8 @@ tests/CMakeFiles/gatewaytest.dir/__/src/PromoServiceProxyImpl.cpp.o
  /usr/local/include/google/protobuf/util/type_resolver_util.h
  /usr/local/include/google/protobuf/wire_format_lite.h
 
-tests/CMakeFiles/gatewaytest.dir/gatewaytest.cpp.o
- /home/timsus/projects/COAproject/gateway/tests/gatewaytest.cpp
+tests/CMakeFiles/gatewaytest.dir/finaltest.cpp.o
+ /home/timsus/projects/COAproject/gateway/tests/finaltest.cpp
  /home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.h
  /home/timsus/projects/COAproject/proto/generated/auth.pb.h
  /home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.h

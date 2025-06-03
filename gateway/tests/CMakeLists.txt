@@ -20,7 +20,7 @@ include_directories(${CMAKE_SOURCE_DIR}/../proto/generated)
 set(GENERATED_DIR ${CMAKE_SOURCE_DIR}/../proto/generated)
 
 set(TEST_SOURCES
-    gatewaytest.cpp
+    finaltest.cpp
     KafkaConsumer.cpp
     ${CMAKE_SOURCE_DIR}/src/AuthServiceProxyImpl.cpp
     ${CMAKE_SOURCE_DIR}/src/PromoServiceProxyImpl.cpp

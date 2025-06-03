@@ -226,29 +226,29 @@ __/src/PromoServiceProxyImpl.cpp.s:
 	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/__/src/PromoServiceProxyImpl.cpp.s
 .PHONY : __/src/PromoServiceProxyImpl.cpp.s
 
-gatewaytest.o: gatewaytest.cpp.o
-.PHONY : gatewaytest.o
+finaltest.o: finaltest.cpp.o
+.PHONY : finaltest.o
 
 # target to build an object file
-gatewaytest.cpp.o:
-	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/gatewaytest.cpp.o
-.PHONY : gatewaytest.cpp.o
+finaltest.cpp.o:
+	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/finaltest.cpp.o
+.PHONY : finaltest.cpp.o
 
-gatewaytest.i: gatewaytest.cpp.i
-.PHONY : gatewaytest.i
+finaltest.i: finaltest.cpp.i
+.PHONY : finaltest.i
 
 # target to preprocess a source file
-gatewaytest.cpp.i:
-	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/gatewaytest.cpp.i
-.PHONY : gatewaytest.cpp.i
+finaltest.cpp.i:
+	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/finaltest.cpp.i
+.PHONY : finaltest.cpp.i
 
-gatewaytest.s: gatewaytest.cpp.s
-.PHONY : gatewaytest.s
+finaltest.s: finaltest.cpp.s
+.PHONY : finaltest.s
 
 # target to generate assembly for a file
-gatewaytest.cpp.s:
-	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/gatewaytest.cpp.s
-.PHONY : gatewaytest.cpp.s
+finaltest.cpp.s:
+	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/finaltest.cpp.s
+.PHONY : finaltest.cpp.s
 
 home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.o: home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc.o
 .PHONY : home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.o
@@ -367,9 +367,9 @@ help:
 	@echo "... __/src/PromoServiceProxyImpl.o"
 	@echo "... __/src/PromoServiceProxyImpl.i"
 	@echo "... __/src/PromoServiceProxyImpl.s"
-	@echo "... gatewaytest.o"
-	@echo "... gatewaytest.i"
-	@echo "... gatewaytest.s"
+	@echo "... finaltest.o"
+	@echo "... finaltest.i"
+	@echo "... finaltest.s"
 	@echo "... home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.o"
 	@echo "... home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.i"
 	@echo "... home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.s"

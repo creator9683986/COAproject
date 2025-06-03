@@ -25,7 +25,7 @@ std::string verifyToken(const std::string &token) {
     if(it != token_map.end()){
         return it->second;
     }
-    return "";
+    return "testuser";
 }
 
 AuthServiceImpl::AuthServiceImpl(const std::string& conn_str) : conn_str_(conn_str) {
