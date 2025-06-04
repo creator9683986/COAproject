@@ -226,30 +226,6 @@ __/src/PromoServiceProxyImpl.cpp.s:
 	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/__/src/PromoServiceProxyImpl.cpp.s
 .PHONY : __/src/PromoServiceProxyImpl.cpp.s
 
-finaltest.o: finaltest.cpp.o
-.PHONY : finaltest.o
-
-# target to build an object file
-finaltest.cpp.o:
-	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/finaltest.cpp.o
-.PHONY : finaltest.cpp.o
-
-finaltest.i: finaltest.cpp.i
-.PHONY : finaltest.i
-
-# target to preprocess a source file
-finaltest.cpp.i:
-	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/finaltest.cpp.i
-.PHONY : finaltest.cpp.i
-
-finaltest.s: finaltest.cpp.s
-.PHONY : finaltest.s
-
-# target to generate assembly for a file
-finaltest.cpp.s:
-	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/finaltest.cpp.s
-.PHONY : finaltest.cpp.s
-
 home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.o: home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc.o
 .PHONY : home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.o
 
@@ -346,6 +322,30 @@ home/timsus/projects/COAproject/proto/generated/promo.pb.cc.s:
 	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.s
 .PHONY : home/timsus/projects/COAproject/proto/generated/promo.pb.cc.s
 
+hw6.o: hw6.cpp.o
+.PHONY : hw6.o
+
+# target to build an object file
+hw6.cpp.o:
+	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/hw6.cpp.o
+.PHONY : hw6.cpp.o
+
+hw6.i: hw6.cpp.i
+.PHONY : hw6.i
+
+# target to preprocess a source file
+hw6.cpp.i:
+	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/hw6.cpp.i
+.PHONY : hw6.cpp.i
+
+hw6.s: hw6.cpp.s
+.PHONY : hw6.s
+
+# target to generate assembly for a file
+hw6.cpp.s:
+	cd /home/timsus/projects/COAproject/gateway/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/gatewaytest.dir/build.make tests/CMakeFiles/gatewaytest.dir/hw6.cpp.s
+.PHONY : hw6.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -367,9 +367,6 @@ help:
 	@echo "... __/src/PromoServiceProxyImpl.o"
 	@echo "... __/src/PromoServiceProxyImpl.i"
 	@echo "... __/src/PromoServiceProxyImpl.s"
-	@echo "... finaltest.o"
-	@echo "... finaltest.i"
-	@echo "... finaltest.s"
 	@echo "... home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.o"
 	@echo "... home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.i"
 	@echo "... home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.s"
@@ -382,6 +379,9 @@ help:
 	@echo "... home/timsus/projects/COAproject/proto/generated/promo.pb.o"
 	@echo "... home/timsus/projects/COAproject/proto/generated/promo.pb.i"
 	@echo "... home/timsus/projects/COAproject/proto/generated/promo.pb.s"
+	@echo "... hw6.o"
+	@echo "... hw6.i"
+	@echo "... hw6.s"
 .PHONY : help
 
 

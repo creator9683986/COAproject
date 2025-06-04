@@ -69,19 +69,19 @@ include tests/CMakeFiles/gatewaytest.dir/progress.make
 # Include the compile flags for this target's objects.
 include tests/CMakeFiles/gatewaytest.dir/flags.make
 
-tests/CMakeFiles/gatewaytest.dir/finaltest.cpp.o: tests/CMakeFiles/gatewaytest.dir/flags.make
-tests/CMakeFiles/gatewaytest.dir/finaltest.cpp.o: /home/timsus/projects/COAproject/gateway/tests/finaltest.cpp
-tests/CMakeFiles/gatewaytest.dir/finaltest.cpp.o: tests/CMakeFiles/gatewaytest.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timsus/projects/COAproject/gateway/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/CMakeFiles/gatewaytest.dir/finaltest.cpp.o"
-	cd /home/timsus/projects/COAproject/gateway/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/gatewaytest.dir/finaltest.cpp.o -MF CMakeFiles/gatewaytest.dir/finaltest.cpp.o.d -o CMakeFiles/gatewaytest.dir/finaltest.cpp.o -c /home/timsus/projects/COAproject/gateway/tests/finaltest.cpp
+tests/CMakeFiles/gatewaytest.dir/hw6.cpp.o: tests/CMakeFiles/gatewaytest.dir/flags.make
+tests/CMakeFiles/gatewaytest.dir/hw6.cpp.o: /home/timsus/projects/COAproject/gateway/tests/hw6.cpp
+tests/CMakeFiles/gatewaytest.dir/hw6.cpp.o: tests/CMakeFiles/gatewaytest.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timsus/projects/COAproject/gateway/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/CMakeFiles/gatewaytest.dir/hw6.cpp.o"
+	cd /home/timsus/projects/COAproject/gateway/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/CMakeFiles/gatewaytest.dir/hw6.cpp.o -MF CMakeFiles/gatewaytest.dir/hw6.cpp.o.d -o CMakeFiles/gatewaytest.dir/hw6.cpp.o -c /home/timsus/projects/COAproject/gateway/tests/hw6.cpp
 
-tests/CMakeFiles/gatewaytest.dir/finaltest.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gatewaytest.dir/finaltest.cpp.i"
-	cd /home/timsus/projects/COAproject/gateway/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/timsus/projects/COAproject/gateway/tests/finaltest.cpp > CMakeFiles/gatewaytest.dir/finaltest.cpp.i
+tests/CMakeFiles/gatewaytest.dir/hw6.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gatewaytest.dir/hw6.cpp.i"
+	cd /home/timsus/projects/COAproject/gateway/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/timsus/projects/COAproject/gateway/tests/hw6.cpp > CMakeFiles/gatewaytest.dir/hw6.cpp.i
 
-tests/CMakeFiles/gatewaytest.dir/finaltest.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gatewaytest.dir/finaltest.cpp.s"
-	cd /home/timsus/projects/COAproject/gateway/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/timsus/projects/COAproject/gateway/tests/finaltest.cpp -o CMakeFiles/gatewaytest.dir/finaltest.cpp.s
+tests/CMakeFiles/gatewaytest.dir/hw6.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gatewaytest.dir/hw6.cpp.s"
+	cd /home/timsus/projects/COAproject/gateway/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/timsus/projects/COAproject/gateway/tests/hw6.cpp -o CMakeFiles/gatewaytest.dir/hw6.cpp.s
 
 tests/CMakeFiles/gatewaytest.dir/KafkaConsumer.cpp.o: tests/CMakeFiles/gatewaytest.dir/flags.make
 tests/CMakeFiles/gatewaytest.dir/KafkaConsumer.cpp.o: /home/timsus/projects/COAproject/gateway/tests/KafkaConsumer.cpp
@@ -197,7 +197,7 @@ tests/CMakeFiles/gatewaytest.dir/home/timsus/projects/COAproject/proto/generated
 
 # Object files for target gatewaytest
 gatewaytest_OBJECTS = \
-"CMakeFiles/gatewaytest.dir/finaltest.cpp.o" \
+"CMakeFiles/gatewaytest.dir/hw6.cpp.o" \
 "CMakeFiles/gatewaytest.dir/KafkaConsumer.cpp.o" \
 "CMakeFiles/gatewaytest.dir/__/src/AuthServiceProxyImpl.cpp.o" \
 "CMakeFiles/gatewaytest.dir/__/src/PromoServiceProxyImpl.cpp.o" \
@@ -210,7 +210,7 @@ gatewaytest_OBJECTS = \
 # External object files for target gatewaytest
 gatewaytest_EXTERNAL_OBJECTS =
 
-tests/gatewaytest: tests/CMakeFiles/gatewaytest.dir/finaltest.cpp.o
+tests/gatewaytest: tests/CMakeFiles/gatewaytest.dir/hw6.cpp.o
 tests/gatewaytest: tests/CMakeFiles/gatewaytest.dir/KafkaConsumer.cpp.o
 tests/gatewaytest: tests/CMakeFiles/gatewaytest.dir/__/src/AuthServiceProxyImpl.cpp.o
 tests/gatewaytest: tests/CMakeFiles/gatewaytest.dir/__/src/PromoServiceProxyImpl.cpp.o

@@ -12,11 +12,11 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/timsus/projects/COAproject/gateway/src/AuthServiceProxyImpl.cpp" "tests/CMakeFiles/gatewaytest.dir/__/src/AuthServiceProxyImpl.cpp.o" "gcc" "tests/CMakeFiles/gatewaytest.dir/__/src/AuthServiceProxyImpl.cpp.o.d"
   "/home/timsus/projects/COAproject/gateway/src/KafkaProducer.cpp" "tests/CMakeFiles/gatewaytest.dir/__/src/KafkaProducer.cpp.o" "gcc" "tests/CMakeFiles/gatewaytest.dir/__/src/KafkaProducer.cpp.o.d"
   "/home/timsus/projects/COAproject/gateway/src/PromoServiceProxyImpl.cpp" "tests/CMakeFiles/gatewaytest.dir/__/src/PromoServiceProxyImpl.cpp.o" "gcc" "tests/CMakeFiles/gatewaytest.dir/__/src/PromoServiceProxyImpl.cpp.o.d"
-  "/home/timsus/projects/COAproject/gateway/tests/finaltest.cpp" "tests/CMakeFiles/gatewaytest.dir/finaltest.cpp.o" "gcc" "tests/CMakeFiles/gatewaytest.dir/finaltest.cpp.o.d"
   "/home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc" "tests/CMakeFiles/gatewaytest.dir/home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc.o" "gcc" "tests/CMakeFiles/gatewaytest.dir/home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc.o.d"
   "/home/timsus/projects/COAproject/proto/generated/auth.pb.cc" "tests/CMakeFiles/gatewaytest.dir/home/timsus/projects/COAproject/proto/generated/auth.pb.cc.o" "gcc" "tests/CMakeFiles/gatewaytest.dir/home/timsus/projects/COAproject/proto/generated/auth.pb.cc.o.d"
   "/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc" "tests/CMakeFiles/gatewaytest.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.o" "gcc" "tests/CMakeFiles/gatewaytest.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.o.d"
   "/home/timsus/projects/COAproject/proto/generated/promo.pb.cc" "tests/CMakeFiles/gatewaytest.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o" "gcc" "tests/CMakeFiles/gatewaytest.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o.d"
+  "/home/timsus/projects/COAproject/gateway/tests/hw6.cpp" "tests/CMakeFiles/gatewaytest.dir/hw6.cpp.o" "gcc" "tests/CMakeFiles/gatewaytest.dir/hw6.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

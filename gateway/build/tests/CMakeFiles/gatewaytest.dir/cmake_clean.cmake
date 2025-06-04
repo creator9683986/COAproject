@@ -7,8 +7,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/gatewaytest.dir/__/src/KafkaProducer.cpp.o.d"
   "CMakeFiles/gatewaytest.dir/__/src/PromoServiceProxyImpl.cpp.o"
   "CMakeFiles/gatewaytest.dir/__/src/PromoServiceProxyImpl.cpp.o.d"
-  "CMakeFiles/gatewaytest.dir/finaltest.cpp.o"
-  "CMakeFiles/gatewaytest.dir/finaltest.cpp.o.d"
   "CMakeFiles/gatewaytest.dir/home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc.o"
   "CMakeFiles/gatewaytest.dir/home/timsus/projects/COAproject/proto/generated/auth.grpc.pb.cc.o.d"
   "CMakeFiles/gatewaytest.dir/home/timsus/projects/COAproject/proto/generated/auth.pb.cc.o"
@@ -17,6 +15,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/gatewaytest.dir/home/timsus/projects/COAproject/proto/generated/promo.grpc.pb.cc.o.d"
   "CMakeFiles/gatewaytest.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o"
   "CMakeFiles/gatewaytest.dir/home/timsus/projects/COAproject/proto/generated/promo.pb.cc.o.d"
+  "CMakeFiles/gatewaytest.dir/hw6.cpp.o"
+  "CMakeFiles/gatewaytest.dir/hw6.cpp.o.d"
   "gatewaytest"
   "gatewaytest.pdb"
 )

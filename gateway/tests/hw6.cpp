@@ -72,12 +72,7 @@ TEST_F(AuthServiceTest, RegisterUserTest) {
     auto st = service_impl_->RegisterUser(&ctx, &req, &resp);
     EXPECT_TRUE(st.ok() || st.error_code() == grpc::StatusCode::ALREADY_EXISTS);
 
-    std::this_thread::sleep_for(std::chrono::seconds(3));
-
-
-    KafkaConsumer consumer("localhost:9092", "user-registration", "test-group-temp-12345");
-
-     grpc::ServerContext ctxLogin;
+    grpc::ServerContext ctxLogin;
     auth::LoginRequest reqLogin;
     reqLogin.set_login("newuser");
     reqLogin.set_password("newpass");
@@ -89,57 +84,6 @@ TEST_F(AuthServiceTest, RegisterUserTest) {
     EXPECT_EQ(respLogin.user().login(), "newuser");
     EXPECT_EQ(respLogin.user().email(), "new@example.com");
 }
-
-/// 2e2
-TEST_F(AuthServiceTest, Promo) {
-    grpc::ServerContext ctx;
-    auth::RegisterUserRequest req;
-    req.set_login("testuser");
-    req.set_password("testpass");
-    req.set_email("test@example.com");
-    auth::User resp;
-
-    auto st = service_impl_->RegisterUser(&ctx, &req, &resp);
-    EXPECT_TRUE(st.ok() || st.error_code() == grpc::StatusCode::ALREADY_EXISTS);
-
-     grpc::ServerContext ctxLogin;
-    auth::LoginRequest reqLogin;
-    reqLogin.set_login("testuser");
-    reqLogin.set_password("testpass");
-    auth::LoginResponse respLogin;
-
-     st = service_impl_->Login(&ctxLogin, &reqLogin, &respLogin);
-    EXPECT_TRUE(st.ok());
-    EXPECT_FALSE(respLogin.token().empty());
-    EXPECT_EQ(respLogin.user().login(), "testuser");
-    EXPECT_EQ(respLogin.user().email(), "test@example.com");
-
-    grpc::ClientContext context;
-    promo::CreatePromoCodeRequest create_req;
-    create_req.set_token(token_);
-    create_req.set_title("Test Promo");
-    create_req.set_description("Test Description");
-    create_req.set_discount(10.5);
-    create_req.set_code("TEST123");
-
-    promo::PromoCode create_resp;
-    grpc::Status status = promo_stub_->CreatePromoCode(&context, create_req, &create_resp);
-    EXPECT_TRUE(status.ok());
-    EXPECT_GT(create_resp.id(), 0);
-    EXPECT_EQ(create_resp.title(), "Test Promo");
-
-    promo::GetPromoCodeRequest get_req;
-    get_req.set_token("testuser");
-    get_req.set_promo_id(create_resp.id());
-    grpc::ClientContext context2;
-
-    promo::PromoCode get_resp;
-    status = promo_stub_->GetPromoCodeById(&context2, get_req, &get_resp);
-    EXPECT_TRUE(status.ok());
-    EXPECT_EQ(get_resp.id(), create_resp.id());
-    EXPECT_EQ(get_resp.title(), "Test Promo");
-}
-
 
 /// Auth test 
 TEST_F(AuthServiceTest, UpdateProfileTest) {
@@ -166,7 +110,7 @@ TEST_F(AuthServiceTest, UpdateProfileTest) {
     reqGet.set_token(token_);
     auth::User respGet;
 
-     st = service_impl_->GetProfile(&ctxGet, &reqGet, &respGet);
+    st = service_impl_->GetProfile(&ctxGet, &reqGet, &respGet);
     EXPECT_TRUE(st.ok());
     EXPECT_EQ(respGet.email(),      "newemail@example.com");
     EXPECT_EQ(respGet.first_name(), "Test");
@@ -221,7 +165,7 @@ TEST_F(AuthServiceTest, DeleteUserTest2e2) {
     req.set_token(token_);
     auth::User delResp;
 
-     st = service_impl_->DeleteUser(&ctx, &req, &delResp);
+    st = service_impl_->DeleteUser(&ctx, &req, &delResp);
     EXPECT_TRUE(st.ok());
     EXPECT_EQ(delResp.login(), "testuser");
 
@@ -233,7 +177,57 @@ TEST_F(AuthServiceTest, DeleteUserTest2e2) {
     EXPECT_FALSE(st.ok());
 }
 
-    int main(int argc, char** argv) {
-        ::testing::InitGoogleTest(&argc, argv);
-        return RUN_ALL_TESTS();
-    }
+/// 2e2
+TEST_F(AuthServiceTest, Promo) {
+    grpc::ServerContext ctx;
+    auth::RegisterUserRequest req;
+    req.set_login("testuser");
+    req.set_password("testpass");
+    req.set_email("test@example.com");
+    auth::User resp;
+
+    auto st = service_impl_->RegisterUser(&ctx, &req, &resp);
+    EXPECT_TRUE(st.ok() || st.error_code() == grpc::StatusCode::ALREADY_EXISTS);
+
+     grpc::ServerContext ctxLogin;
+    auth::LoginRequest reqLogin;
+    reqLogin.set_login("testuser");
+    reqLogin.set_password("testpass");
+    auth::LoginResponse respLogin;
+
+    st = service_impl_->Login(&ctxLogin, &reqLogin, &respLogin);
+    EXPECT_TRUE(st.ok());
+    EXPECT_FALSE(respLogin.token().empty());
+    EXPECT_EQ(respLogin.user().login(), "testuser");
+    EXPECT_EQ(respLogin.user().email(), "test@example.com");
+
+    grpc::ClientContext context;
+    promo::CreatePromoCodeRequest create_req;
+    create_req.set_token(token_);
+    create_req.set_title("Test Promo");
+    create_req.set_description("Test Description");
+    create_req.set_discount(10.5);
+    create_req.set_code("TEST123");
+
+    promo::PromoCode create_resp;
+    grpc::Status status = promo_stub_->CreatePromoCode(&context, create_req, &create_resp);
+    EXPECT_TRUE(status.ok());
+    EXPECT_GT(create_resp.id(), 0);
+    EXPECT_EQ(create_resp.title(), "Test Promo");
+
+    promo::GetPromoCodeRequest get_req;
+    get_req.set_token("testuser");
+    get_req.set_promo_id(create_resp.id());
+    grpc::ClientContext context2;
+
+    promo::PromoCode get_resp;
+    status = promo_stub_->GetPromoCodeById(&context2, get_req, &get_resp);
+    EXPECT_TRUE(status.ok());
+    EXPECT_EQ(get_resp.id(), create_resp.id());
+    EXPECT_EQ(get_resp.title(), "Test Promo");
+}
+
+int main(int argc, char** argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
